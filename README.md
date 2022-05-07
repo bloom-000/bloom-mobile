@@ -1,1 +1,2 @@
-# bloom_mobile
+# Bloom
+## eCommerce mobile application
