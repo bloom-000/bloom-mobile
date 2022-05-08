@@ -4,8 +4,8 @@ import 'palette.dart';
 
 abstract class AppTheme {
   static final RoundedRectangleBorder _defaultButtonShape =
-      RoundedRectangleBorder(borderRadius: BorderRadius.circular(12));
-  static const EdgeInsets _defaultButtonPadding = EdgeInsets.symmetric(vertical: 18);
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(4));
+  static const EdgeInsets _defaultButtonPadding = EdgeInsets.symmetric(vertical: 12, horizontal: 12);
 
   static final BorderRadius _defaultInputBorderRadius = BorderRadius.circular(12);
 
@@ -79,7 +79,7 @@ abstract class AppTheme {
         shape: MaterialStateProperty.all(_defaultButtonShape),
         textStyle: MaterialStateProperty.all<TextStyle>(const TextStyle(color: Colors.white)),
         foregroundColor: MaterialStateProperty.all<Color>(Colors.white),
-        overlayColor: MaterialStateProperty.all<Color>(Colors.white24),
+        overlayColor: MaterialStateProperty.all<Color>(Palette.primaryLight),
         padding: MaterialStateProperty.all<EdgeInsets>(_defaultButtonPadding),
       ),
     ),

@@ -5,7 +5,7 @@ import 'package:common_network_components/common_network_components.dart';
 import 'package:dio/dio.dart';
 
 import '../../../domain/store/authentication_token_store.dart';
-import '../../../presentation/navigation/screen_navigator.dart';
+import '../../../presentation/navigation/page_navigator.dart';
 
 const int kNetworkTimeout = 20000;
 

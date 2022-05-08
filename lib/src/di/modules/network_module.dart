@@ -6,7 +6,7 @@ import '../../data/network/api/api_service.dart';
 import '../../data/network/api/multipart_api_service.dart';
 import '../../data/network/interceptor/authorization_interceptor.dart';
 import '../../domain/store/authentication_token_store.dart';
-import '../../presentation/navigation/screen_navigator.dart';
+import '../../presentation/navigation/page_navigator.dart';
 
 @module
 abstract class NetworkModule {
