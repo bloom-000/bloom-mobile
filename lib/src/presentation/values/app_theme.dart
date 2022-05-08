@@ -7,7 +7,7 @@ abstract class AppTheme {
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(4));
   static const EdgeInsets _defaultButtonPadding = EdgeInsets.symmetric(vertical: 12, horizontal: 12);
 
-  static final BorderRadius _defaultInputBorderRadius = BorderRadius.circular(12);
+  static final BorderRadius _defaultInputBorderRadius = BorderRadius.circular(4);
 
   static final ThemeData lightTheme = ThemeData.light().copyWith(
     scaffoldBackgroundColor: Colors.white,
@@ -40,17 +40,17 @@ abstract class AppTheme {
       fillColor: Palette.secondaryContainer,
       border: OutlineInputBorder(
         borderRadius: _defaultInputBorderRadius,
-        // borderSide: const BorderSide(color: Palette.borderInput),
+        borderSide: BorderSide.none,
       ),
       enabledBorder: OutlineInputBorder(
         borderRadius: _defaultInputBorderRadius,
-        // borderSide: const BorderSide(color: Palette.borderInput),
+        borderSide: BorderSide.none,
       ),
       focusedBorder: OutlineInputBorder(
         borderRadius: _defaultInputBorderRadius,
-        borderSide: const BorderSide(color: Palette.primary, width: 2),
+        borderSide: const BorderSide(color: Palette.primary),
       ),
-      contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 14),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 6),
       hintStyle: const TextStyle(fontSize: 14, color: Palette.secondaryElement),
       labelStyle: const TextStyle(fontSize: 14, color: Palette.secondaryElement),
       alignLabelWithHint: true,

@@ -15,6 +15,18 @@ class AppTranslations extends Translations {
 
   final Map<String, String> _enUs = <String, String>{
     TkCommon.signIn: 'Sign in',
+    TkCommon.signUp: 'Sign up',
+
+    TkFieldHint.emailAddress: 'Email address',
+    TkFieldHint.password: 'Password',
+    TkFieldHint.repeatPassword: 'Repeat password',
+    TkFieldHint.fullName: 'Full name',
+    TkFieldHint.birthDate: 'Birth date',
+    TkFieldHint.gender: 'Gender',
+
+    TkValidationError.fieldIsRequired: 'Field is required',
+    TkValidationError.invalidEmail: 'Invalid email',
+    TkValidationError.passwordIsTooShort: 'Password is too short',
 
     TkWelcome.captionPage1: 'Esuada fames ac turpis egestas. Integer orci dui, vehicula in urna sed, sollicitudin tempus risus',
     TkWelcome.captionPage2: 'Phasellus semper, erat ut scelerisque pellentesque',
@@ -22,5 +34,11 @@ class AppTranslations extends Translations {
     TkWelcome.captionPage4: 'Donec tincidunt tellus lacus. Ut vehicula',
     TkWelcome.bottomCaption: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris tincidunt, mauris',
     TkWelcome.buttonCreateAccount: 'Or create account',
+
+    TkSignIn.header: 'Welcome\nBack!',
+    TkSignIn.subHeader: 'Continue where you left off',
+    TkSignIn.buttonForgotPassword: 'Forgot password?',
+    TkSignIn.captionContinueWith: 'or continue with',
+    TkSignIn.captionDontHaveAccount: 'Don\' have an account?',
   };
 }
