@@ -1,6 +1,9 @@
+// ignore_for_file: avoid_field_initializers_in_const_classes
+
 abstract class TkCommon {
   static const String signIn = 'TkCommon.signIn';
   static const String signUp = 'TkCommon.signUp';
+  static const String and = 'TkCommon.and';
 }
 
 abstract class TkFieldHint {
@@ -16,6 +19,24 @@ abstract class TkValidationError {
   static const String fieldIsRequired = 'TkValidationError.fieldIsRequired';
   static const String invalidEmail = 'TkValidationError.invalidEmail';
   static const String passwordIsTooShort = 'TkValidationError.passwordIsTooShort';
+  static const String repeatedPasswordDoesNotMatch = 'TkValidationError.repeatedPasswordDoesNotMatch';
+  static const String nameIsTooShort = 'TkValidationError.nameIsTooShort';
+}
+
+abstract class TkOptionSelectorHeader {
+  static const String gender = 'TkOptionSelectorHeader.gender';
+}
+
+abstract class TkEnum {
+  static const _TkGender gender = _TkGender._();
+}
+
+class _TkGender {
+  const _TkGender._();
+
+  final String male = '_TkGender.male';
+  final String female = '_TkGender.female';
+  final String other = '_TkGender.other';
 }
 
 abstract class TkWelcome {
@@ -33,4 +54,11 @@ abstract class TkSignIn {
   static const String buttonForgotPassword = 'TkSignIn.buttonForgotPassword';
   static const String captionContinueWith = 'TkSignIn.captionContinueWith';
   static const String captionDontHaveAccount = 'TkSignIn.captionDontHaveAccount';
+}
+
+abstract class TkSignUp {
+  static const String header = 'TkSignUp.header';
+  static const String legalCaptionStart = 'TkSignUp.legalCaptionStart';
+  static const String privacyPolicy = 'TkSignUp.privacyPolicy';
+  static const String termsOfService = 'TkSignUp.termsOfService';
 }

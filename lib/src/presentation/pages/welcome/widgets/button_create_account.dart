@@ -12,11 +12,14 @@ class ButtonCreateAccount extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return Align(
       alignment: Alignment.centerRight,
       child: MaterialButton(
         padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
         onPressed: context.read<WelcomePageCubit>().onCreateAccountPressed,
+        textColor: theme.textTheme.bodyText1?.color,
         child: Row(
           mainAxisSize: MainAxisSize.min,
           children: <Widget>[

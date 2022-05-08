@@ -10,9 +10,12 @@ class ButtonForgotPassword extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final ThemeData theme = Theme.of(context);
+
     return MaterialButton(
       onPressed: context.read<SignInPageCubit>().onForgotPasswordChanged,
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+      textColor: theme.textTheme.bodyText1?.color,
       child: Text(TkSignIn.buttonForgotPassword.i18n),
     );
   }

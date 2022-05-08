@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:static_i18n/static_i18n.dart';
 
 import '../../../i18n/translation_keys.dart';
@@ -27,32 +27,18 @@ class HeaderContainer extends StatelessWidget {
             alignment: Alignment.centerLeft,
             child: DefaultBackButton(color: Colors.white),
           ),
-          const SizedBox(height: 36),
+          const SizedBox(height: 12),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.end,
             children: <Widget>[
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  Text(
-                    TkSignIn.header.i18n,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
-                  const SizedBox(height: 16),
-                  Text(
-                    TkSignIn.subHeader.i18n,
-                    style: const TextStyle(
-                      fontSize: 15,
-                      fontWeight: FontWeight.w600,
-                      color: Colors.white60,
-                    ),
-                  ),
-                ],
+              Text(
+                TkSignUp.header.i18n,
+                style: const TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
               SvgPicture.asset(Assets.iconLogo),
             ],

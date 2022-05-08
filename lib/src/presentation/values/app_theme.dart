@@ -19,7 +19,7 @@ abstract class AppTheme {
     secondaryHeaderColor: Palette.secondaryElement,
     colorScheme: const ColorScheme.light().copyWith(
       primary: Palette.primary,
-      secondary: Palette.primary,
+      secondary: Palette.secondary,
       secondaryContainer: Palette.secondaryContainer,
       primaryContainer: Palette.primaryContainer,
     ),

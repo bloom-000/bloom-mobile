@@ -3,7 +3,6 @@ import 'package:injectable/injectable.dart';
 
 import '../../common/constants.dart';
 import '../../data/network/api/api_service.dart';
-import '../../data/network/api/multipart_api_service.dart';
 import '../../data/network/interceptor/authorization_interceptor.dart';
 import '../../domain/store/authentication_token_store.dart';
 import '../../presentation/navigation/page_navigator.dart';
@@ -41,7 +40,4 @@ abstract class NetworkModule {
 
   @lazySingleton
   ApiService apiService(Dio dio) => ApiService(dio);
-
-  @lazySingleton
-  MultipartApiService multipartApiService(Dio dio) => MultipartApiService(dio, Constants.apiUrl);
 }

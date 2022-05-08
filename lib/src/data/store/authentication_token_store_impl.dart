@@ -36,7 +36,7 @@ class AuthenticationTokenStoreImpl implements AuthenticationTokenStore {
 
   @override
   Future<bool> hasRefreshToken() async {
-    final refreshToken = await _secureStorage.read(key: _keyRefreshToken);
+    final String? refreshToken = await _secureStorage.read(key: _keyRefreshToken);
     return refreshToken != null;
   }
 }

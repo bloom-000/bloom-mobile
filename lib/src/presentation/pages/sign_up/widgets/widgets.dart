@@ -1,0 +1,9 @@
+export 'button_sign_up.dart';
+export 'field_birth_date.dart';
+export 'field_email.dart';
+export 'field_full_name.dart';
+export 'field_gender.dart';
+export 'field_password.dart';
+export 'field_repeated_password.dart';
+export 'header_container.dart';
+export 'legal_terms.dart';
