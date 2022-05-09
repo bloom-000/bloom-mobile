@@ -18,9 +18,11 @@ class AppTranslations extends Translations {
     TkCommon.signUp: 'Sign up',
     TkCommon.and: 'and',
     TkCommon.lastUpdatedAt: 'Last updated at',
+    TkCommon.continue_: 'Continue',
 
     TkFieldHint.emailAddress: 'Email address',
     TkFieldHint.password: 'Password',
+    TkFieldHint.newPassword: 'New password',
     TkFieldHint.repeatPassword: 'Repeat password',
     TkFieldHint.fullName: 'Full name',
     TkFieldHint.birthDate: 'Birth date',
@@ -58,6 +60,18 @@ class AppTranslations extends Translations {
 
     TkTermsOfService.header: 'Terms of service',
 
-    TkPrivacyPolicy.header: 'Privacy policy'
+    TkPrivacyPolicy.header: 'Privacy policy',
+
+    TkRecoverPasswordRequest.header: 'Forgot\nPassword?',
+    TkRecoverPasswordRequest.helperCaption1: 'Enter your email to let us send you a verification code.',
+
+    TkRecoverPasswordConfirm.header: 'Confirm\nYour Email',
+    TkRecoverPasswordConfirm.helperCaption1: 'We have sent you a 5 digit verification code to ',
+    TkRecoverPasswordConfirm.helperCaption2: 'If you have not received one, click resend code button bellow',
+    TkRecoverPasswordConfirm.captionDidntGetCode: 'Didn\'t get a verification code? ',
+    TkRecoverPasswordConfirm.buttonResend: 'Resend',
+
+    TkRecoverPasswordChange.header: 'Change\nPassword',
+    TkRecoverPasswordChange.buttonChangePassword: 'Change password',
   };
 }

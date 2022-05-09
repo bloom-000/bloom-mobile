@@ -5,11 +5,13 @@ abstract class TkCommon {
   static const String signUp = 'TkCommon.signUp';
   static const String and = 'TkCommon.and';
   static const String lastUpdatedAt = 'TkCommon.lastUpdatedAt';
+  static const String continue_ = 'TkCommon.continue';
 }
 
 abstract class TkFieldHint {
   static const String emailAddress = 'TkFieldHint.emailAddress';
   static const String password = 'TkFieldHint.password';
+  static const String newPassword = 'TkFieldHint.newPassword';
   static const String repeatPassword = 'TkFieldHint.repeatPassword';
   static const String fullName = 'TkFieldHint.fullName';
   static const String birthDate = 'TkFieldHint.birthDate';
@@ -70,4 +72,22 @@ abstract class TkTermsOfService {
 
 abstract class TkPrivacyPolicy {
   static const String header = 'TkPrivacyPolicy.header';
+}
+
+abstract class TkRecoverPasswordRequest {
+  static const String header = 'TkRecoverPasswordRequest.header';
+  static const String helperCaption1 = 'TkRecoverPasswordRequest.helperCaption1';
+}
+
+abstract class TkRecoverPasswordConfirm {
+  static const String header = 'TkRecoverPasswordConfirm.header';
+  static const String helperCaption1 = 'TkRecoverPasswordConfirm.helperCaption1';
+  static const String helperCaption2 = 'TkRecoverPasswordConfirm.helperCaption2';
+  static const String captionDidntGetCode = 'TkRecoverPasswordConfirm.captionDidntGetCode';
+  static const String buttonResend = 'TkRecoverPasswordConfirm.buttonResend';
+}
+
+abstract class TkRecoverPasswordChange {
+  static const String header = 'TkRecoverPasswordChange.header';
+  static const String buttonChangePassword = 'TkRecoverPasswordChange.buttonChangePassword';
 }

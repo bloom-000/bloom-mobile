@@ -1,6 +1,8 @@
 import 'package:global_navigator/global_navigator.dart';
 import 'package:injectable/injectable.dart';
 
+import 'route_args/recover_password_change_page_args.dart';
+import 'route_args/recover_password_confirm_page_args.dart';
 import 'routes.dart';
 
 @lazySingleton
@@ -21,4 +23,12 @@ class PageNavigator {
   void toTermsOfServicePage() => GlobalNavigator.pushNamed(Routes.termsOfService);
 
   void toPrivacyPolicyPage() => GlobalNavigator.pushNamed(Routes.privacyPolicy);
+
+  void toRecoverPasswordRequestPage() => GlobalNavigator.pushNamed(Routes.recoverPasswordRequest);
+
+  void toRecoverPasswordConfirmPage(RecoverPasswordConfirmPageArgs args) =>
+      GlobalNavigator.pushNamed(Routes.recoverPasswordConfirm, arguments: args);
+
+  void toRecoverPasswordChangePage(RecoverPasswordChangePageArgs args) =>
+      GlobalNavigator.pushNamed(Routes.recoverPasswordChange, arguments: args);
 }

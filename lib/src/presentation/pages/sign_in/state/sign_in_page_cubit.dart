@@ -39,7 +39,7 @@ class SignInPageCubit extends Cubit<SignInPageState> {
   void onPasswordEyePressed() =>
       emit(state.copyWith(isPasswordFieldObscured: !state.isPasswordFieldObscured));
 
-  void onForgotPasswordChanged() {}
+  void onForgotPasswordChanged() => _pageNavigator.toRecoverPasswordRequestPage();
 
   void onSignInPressed() {
     emit(state.copyWith(validateForm: true));

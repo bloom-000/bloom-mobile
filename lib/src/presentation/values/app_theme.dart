@@ -5,7 +5,8 @@ import 'palette.dart';
 abstract class AppTheme {
   static final RoundedRectangleBorder _defaultButtonShape =
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(4));
-  static const EdgeInsets _defaultButtonPadding = EdgeInsets.symmetric(vertical: 12, horizontal: 12);
+  static const EdgeInsets _defaultButtonPadding =
+      EdgeInsets.symmetric(vertical: 12, horizontal: 12);
 
   static final BorderRadius _defaultInputBorderRadius = BorderRadius.circular(4);
 
@@ -17,6 +18,11 @@ abstract class AppTheme {
     primaryColorLight: Palette.primaryLight,
     primaryColorDark: Palette.primaryDark,
     secondaryHeaderColor: Palette.secondaryElement,
+    appBarTheme: const AppBarTheme(
+      backgroundColor: Colors.white,
+      elevation: 0,
+      centerTitle: true,
+    ),
     colorScheme: const ColorScheme.light().copyWith(
       primary: Palette.primary,
       secondary: Palette.secondary,

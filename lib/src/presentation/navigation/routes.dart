@@ -7,4 +7,7 @@ abstract class Routes {
   static const String signUp = 'signUp';
   static const String termsOfService = 'termsOfService';
   static const String privacyPolicy = 'privacyPolicy';
+  static const String recoverPasswordRequest = 'recoverPasswordRequest';
+  static const String recoverPasswordConfirm = 'recoverPasswordConfirm';
+  static const String recoverPasswordChange = 'recoverPasswordChange';
 }
