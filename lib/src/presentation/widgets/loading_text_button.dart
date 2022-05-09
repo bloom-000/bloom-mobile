@@ -8,7 +8,7 @@ class LoadingTextButton extends StatelessWidget {
     required this.label,
   }) : super(key: key);
 
-  final VoidCallback onPressed;
+  final VoidCallback? onPressed;
   final bool isLoading;
   final String label;
 

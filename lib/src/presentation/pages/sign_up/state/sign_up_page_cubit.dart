@@ -5,9 +5,12 @@ import 'package:injectable/injectable.dart';
 import 'package:static_i18n/static_i18n.dart';
 
 import '../../../../domain/enum/gender.dart';
+import '../../../../domain/failure/authentication/sign_up_failure.dart';
+import '../../../../domain/manager/authentication_manager.dart';
 import '../../../i18n/i18n_extensions/gender_i18n_extension.dart';
 import '../../../i18n/translation_keys.dart';
 import '../../../navigation/page_navigator.dart';
+import '../../../notifier/failure_notifiers/sign_up_failure_notifier.dart';
 import '../../../overlay/bottom_sheet/core/bottom_sheet_manager.dart';
 import '../../../overlay/dialog/core/dialog_manager.dart';
 
@@ -26,6 +29,7 @@ class SignUpPageState with _$SignUpPageState {
     required bool isRepeatedPasswordFieldObscured,
     required bool validateForm,
     required bool agreedToLegalTerms,
+    required bool isSubmitting,
   }) = _SignUpPageState;
 
   factory SignUpPageState.initial() => SignUpPageState(
@@ -37,6 +41,7 @@ class SignUpPageState with _$SignUpPageState {
         isRepeatedPasswordFieldObscured: true,
         validateForm: false,
         agreedToLegalTerms: false,
+        isSubmitting: false,
       );
 }
 
@@ -46,11 +51,15 @@ class SignUpPageCubit extends Cubit<SignUpPageState> {
     this._bottomSheetManager,
     this._dialogManager,
     this._pageNavigator,
+    this._authenticationManager,
+    this._signUpFailureNotifier,
   ) : super(SignUpPageState.initial());
 
   final BottomSheetManager _bottomSheetManager;
   final DialogManager _dialogManager;
   final PageNavigator _pageNavigator;
+  final AuthenticationManager _authenticationManager;
+  final SignUpFailureNotifier _signUpFailureNotifier;
 
   String _repeatedPasswordValue = '';
 
@@ -107,5 +116,30 @@ class SignUpPageCubit extends Cubit<SignUpPageState> {
 
   Future<void> onSignUpPressed() async {
     emit(state.copyWith(validateForm: true));
+
+    if (!state.fullName.isValid ||
+        !state.email.isValid ||
+        state.birthDate == null ||
+        state.gender == null ||
+        !state.password.isValid ||
+        !state.repeatedPassword.isValid ||
+        !state.agreedToLegalTerms) {
+      return;
+    }
+
+    emit(state.copyWith(isSubmitting: true));
+    final Either<SignUpFailure, Unit> result = await _authenticationManager.signUp(
+      fullName: state.fullName.getOrThrow,
+      email: state.email.getOrThrow,
+      birthDate: state.birthDate!,
+      gender: state.gender!,
+      password: state.password.getOrThrow,
+    );
+    emit(state.copyWith(isSubmitting: false));
+
+    result.fold(
+      _signUpFailureNotifier.notify,
+      (_) => _pageNavigator.toMainPage(),
+    );
   }
 }
