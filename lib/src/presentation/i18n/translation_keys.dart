@@ -14,6 +14,10 @@ abstract class TkError {
   static const String network = 'TkError.network';
   static const String invalidEmailOrPassword = 'TkError.invalidEmailOrPassword';
   static const String emailAlreadyInUse = 'TkError.emailAlreadyInUse';
+  static const String userNotFoundWithEmail = 'TkError.userNotFoundWithEmail';
+  static const String recoverPasswordRequestNotFound = 'TkError.recoverPasswordRequestNotFound';
+  static const String recoverPasswordRequestTimedOut = 'TkError.recoverPasswordRequestTimedOut';
+  static const String recoverPasswordInvalidCode = 'TkError.recoverPasswordInvalidCode';
 }
 
 abstract class TkFieldHint {

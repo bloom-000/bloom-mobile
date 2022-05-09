@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../domain/failure/authentication/recover_password_confirm_code_failure.dart';
 import '../../../domain/failure/authentication/recover_password_failure.dart';
+import '../../../domain/failure/authentication/request_recover_password_failure.dart';
 import '../../../domain/failure/authentication/sign_in_failure.dart';
 import '../../../domain/failure/authentication/sign_up_failure.dart';
 import '../api/api_service.dart';
@@ -85,18 +86,31 @@ class AuthenticationRemoteService extends BaseService {
     );
   }
 
-  Future<Either<SimpleActionFailure, Unit>> requestRecoverPassword({
+  Future<Either<RequestRecoverPasswordFailure, Unit>> requestRecoverPassword({
     required String email,
   }) async {
-    return safeSimpleCall(() async {
-      final RequestRecoverPasswordBody body = RequestRecoverPasswordBody(
-        email: email,
-      );
+    return safeCall(
+      call: () async {
+        final RequestRecoverPasswordBody body = RequestRecoverPasswordBody(
+          email: email,
+        );
 
-      await _apiService.requestRecoverPassword(body);
+        await _apiService.requestRecoverPassword(body);
 
-      return unit;
-    });
+        return unit;
+      },
+      onResponseError: (Response<dynamic>? response) {
+        final ErrorResponseSchema errorResponse =
+            ErrorResponseSchema.fromJson(response!.data! as Map<String, dynamic>);
+        switch (errorResponse.message) {
+          case 'USER_NOT_FOUND':
+            return const RequestRecoverPasswordFailure.userNotFound();
+        }
+        return const RequestRecoverPasswordFailure.unknown();
+      },
+      onNetworkError: () => const RequestRecoverPasswordFailure.network(),
+      onUnknownError: (_) => const RequestRecoverPasswordFailure.unknown(),
+    );
   }
 
   Future<Either<RecoverPasswordConfirmCodeFailure, RecoverPasswordConfirmCodeResponseSchema>>

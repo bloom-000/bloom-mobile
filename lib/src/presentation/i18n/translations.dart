@@ -25,6 +25,10 @@ class AppTranslations extends Translations {
     TkError.network: 'Network error',
     TkError.invalidEmailOrPassword: 'Invalid email or password',
     TkError.emailAlreadyInUse: 'Email already in use',
+    TkError.userNotFoundWithEmail: 'User not found with provided email',
+    TkError.recoverPasswordRequestNotFound: 'Recovery request not found',
+    TkError.recoverPasswordRequestTimedOut: 'Recovery request timed out, please redo the process',
+    TkError.recoverPasswordInvalidCode: 'Invalid code',
 
     TkFieldHint.emailAddress: 'Email address',
     TkFieldHint.password: 'Password',

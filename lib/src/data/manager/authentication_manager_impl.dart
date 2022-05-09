@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/enum/gender.dart';
 import '../../domain/failure/authentication/recover_password_confirm_code_failure.dart';
 import '../../domain/failure/authentication/recover_password_failure.dart';
+import '../../domain/failure/authentication/request_recover_password_failure.dart';
 import '../../domain/failure/authentication/sign_in_failure.dart';
 import '../../domain/failure/authentication/sign_up_failure.dart';
 import '../../domain/manager/authentication_manager.dart';
@@ -104,7 +105,7 @@ class AuthenticationManagerImpl implements AuthenticationManager {
   }
 
   @override
-  Future<Either<SimpleActionFailure, Unit>> requestRecoverPassword({
+  Future<Either<RequestRecoverPasswordFailure, Unit>> requestRecoverPassword({
     required String email,
   }) async =>
       _authenticationRemoteService.requestRecoverPassword(email: email);
