@@ -79,7 +79,7 @@ abstract class AppTheme {
       style: ButtonStyle(
         backgroundColor: MaterialStateProperty.resolveWith(
           (Set<MaterialState> states) => states.contains(MaterialState.disabled)
-              ? Palette.primary.withOpacity(.7)
+              ? Palette.primary.withOpacity(.85)
               : Palette.primary,
         ),
         shape: MaterialStateProperty.all(_defaultButtonShape),

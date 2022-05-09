@@ -3,7 +3,10 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../domain/failure/authentication/sign_in_failure.dart';
+import '../../../../domain/manager/authentication_manager.dart';
 import '../../../navigation/page_navigator.dart';
+import '../../../notifier/failure_notifiers/sign_in_failure_notifier.dart';
 
 part 'sign_in_page_cubit.freezed.dart';
 
@@ -14,6 +17,7 @@ class SignInPageState with _$SignInPageState {
     required Password password,
     required bool isPasswordFieldObscured,
     required bool validateForm,
+    required bool isSubmitting,
   }) = _SignInPageState;
 
   factory SignInPageState.initial() => SignInPageState(
@@ -21,6 +25,7 @@ class SignInPageState with _$SignInPageState {
         password: Password.empty(),
         isPasswordFieldObscured: true,
         validateForm: false,
+        isSubmitting: false,
       );
 }
 
@@ -28,9 +33,13 @@ class SignInPageState with _$SignInPageState {
 class SignInPageCubit extends Cubit<SignInPageState> {
   SignInPageCubit(
     this._pageNavigator,
+    this._authenticationManager,
+    this._signInFailureNotifier,
   ) : super(SignInPageState.initial());
 
   final PageNavigator _pageNavigator;
+  final AuthenticationManager _authenticationManager;
+  final SignInFailureNotifier _signInFailureNotifier;
 
   void onEmailChanged(String email) => emit(state.copyWith(email: Email(email)));
 
@@ -41,8 +50,24 @@ class SignInPageCubit extends Cubit<SignInPageState> {
 
   void onForgotPasswordChanged() => _pageNavigator.toRecoverPasswordRequestPage();
 
-  void onSignInPressed() {
+  Future<void> onSignInPressed() async {
     emit(state.copyWith(validateForm: true));
+
+    if (!state.email.isValid || !state.password.isValid) {
+      return;
+    }
+
+    emit(state.copyWith(isSubmitting: true));
+    final Either<SignInFailure, Unit> result = await _authenticationManager.signIn(
+      email: state.email.getOrThrow,
+      password: state.password.getOrThrow,
+    );
+    emit(state.copyWith(isSubmitting: false));
+
+    result.fold(
+      _signInFailureNotifier.notify,
+      (_) => _pageNavigator.toMainPage(),
+    );
   }
 
   void onGooglePressed() {}

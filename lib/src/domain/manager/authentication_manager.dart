@@ -11,6 +11,8 @@ import '../model/authentication/recover_password_confirm_code_response.dart';
 abstract class AuthenticationManager {
   Future<bool> isAuthenticated();
 
+  Future<void> signOut();
+
   Future<Either<SignInFailure, Unit>> signIn({
     required String email,
     required String password,

@@ -16,10 +16,10 @@ part 'api_service.g.dart';
 abstract class ApiService {
   factory ApiService(Dio dio, {String baseUrl}) = _ApiService;
 
-  @POST('/authentication/sign-up')
+  @POST('/authentication/sign-in')
   Future<AuthenticationPayloadSchema> signIn(@Body() SignInBody body);
 
-  @POST('/authentication/sign-in')
+  @POST('/authentication/sign-up')
   Future<AuthenticationPayloadSchema> signUp(@Body() SignUpBody body);
 
   @POST('/authentication/request-recover-password')

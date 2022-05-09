@@ -19,6 +19,12 @@ class AppTranslations extends Translations {
     TkCommon.and: 'and',
     TkCommon.lastUpdatedAt: 'Last updated at',
     TkCommon.continue_: 'Continue',
+    TkCommon.error: 'Error',
+
+    TkError.unknown: 'Unknown error',
+    TkError.network: 'Network error',
+    TkError.invalidEmailOrPassword: 'Invalid email or password',
+    TkError.emailAlreadyInUse: 'Email already in use',
 
     TkFieldHint.emailAddress: 'Email address',
     TkFieldHint.password: 'Password',

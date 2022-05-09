@@ -6,6 +6,14 @@ abstract class TkCommon {
   static const String and = 'TkCommon.and';
   static const String lastUpdatedAt = 'TkCommon.lastUpdatedAt';
   static const String continue_ = 'TkCommon.continue';
+  static const String error = 'TkCommon.error';
+}
+
+abstract class TkError {
+  static const String unknown = 'TkError.unknown';
+  static const String network = 'TkError.network';
+  static const String invalidEmailOrPassword = 'TkError.invalidEmailOrPassword';
+  static const String emailAlreadyInUse = 'TkError.emailAlreadyInUse';
 }
 
 abstract class TkFieldHint {

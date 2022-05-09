@@ -37,6 +37,11 @@ class AuthenticationManagerImpl implements AuthenticationManager {
   Future<bool> isAuthenticated() => _authenticationTokenStore.hasRefreshToken();
 
   @override
+  Future<void> signOut() async {
+    await _authenticationTokenStore.clear();
+  }
+
+  @override
   Future<Either<SignInFailure, Unit>> signIn({
     required String email,
     required String password,

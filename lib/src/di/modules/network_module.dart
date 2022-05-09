@@ -1,9 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../main.dart';
 import '../../common/constants.dart';
 import '../../data/network/api/api_service.dart';
 import '../../data/network/interceptor/authorization_interceptor.dart';
+import '../../data/network/interceptor/pretty_log_interceptor.dart';
 import '../../domain/store/authentication_token_store.dart';
 import '../../presentation/navigation/page_navigator.dart';
 
@@ -34,6 +36,7 @@ abstract class NetworkModule {
       pageNavigator,
       Constants.apiUrl,
     ));
+    dio.interceptors.add(PrettyLogInterceptor(logPrint: logger.d));
 
     return dio;
   }
