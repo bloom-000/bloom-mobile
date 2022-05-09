@@ -1,3 +1,4 @@
+import 'package:common_models/common_models.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -22,7 +23,7 @@ class FieldEmail extends StatelessWidget {
       ),
       onChanged: context.read<RecoverPasswordRequestPageCubit>().onEmailChanged,
       validator: (_) => context.read<RecoverPasswordRequestPageCubit>().state.email.value.fold(
-            (l) => l.when(
+            (ValueFailure l) => l.when(
               empty: () => TkValidationError.fieldIsRequired.i18n,
               invalid: () => TkValidationError.invalidEmail.i18n,
             ),
