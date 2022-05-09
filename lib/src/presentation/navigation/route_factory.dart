@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../pages/init/init_page.dart';
 import '../pages/main/main_page.dart';
+import '../pages/privacy_policy/privacy_policy_page.dart';
 import '../pages/sign_in/sign_in_page.dart';
 import '../pages/sign_up/sign_up_page.dart';
+import '../pages/terms_of_service/terms_of_service_page.dart';
 import '../pages/welcome/welcome_page.dart';
 import 'routes.dart';
 
@@ -19,9 +21,27 @@ Route<dynamic>? routeFactory(RouteSettings settings) {
       return _createSignInPageRoute(settings);
     case Routes.signUp:
       return _createSignUpPageRoute(settings);
+    case Routes.termsOfService:
+      return _createTermsOfServicePageRoute(settings);
+    case Routes.privacyPolicy:
+      return _createPrivacyPolicyPageRoute(settings);
     default:
       throw Exception('route ${settings.name} is not supported');
   }
+}
+
+Route<void> _createPrivacyPolicyPageRoute(RouteSettings settings) {
+  return MaterialPageRoute<void>(
+    builder: (_) => const PrivacyPolicyPage(),
+    settings: settings,
+  );
+}
+
+Route<void> _createTermsOfServicePageRoute(RouteSettings settings) {
+  return MaterialPageRoute<void>(
+    builder: (_) => const TermsOfServicePage(),
+    settings: settings,
+  );
 }
 
 Route<void> _createSignUpPageRoute(RouteSettings settings) {

@@ -7,6 +7,7 @@ import 'package:static_i18n/static_i18n.dart';
 import '../../../../domain/enum/gender.dart';
 import '../../../i18n/i18n_extensions/gender_i18n_extension.dart';
 import '../../../i18n/translation_keys.dart';
+import '../../../navigation/page_navigator.dart';
 import '../../../overlay/bottom_sheet/core/bottom_sheet_manager.dart';
 import '../../../overlay/dialog/core/dialog_manager.dart';
 
@@ -44,10 +45,12 @@ class SignUpPageCubit extends Cubit<SignUpPageState> {
   SignUpPageCubit(
     this._bottomSheetManager,
     this._dialogManager,
+    this._pageNavigator,
   ) : super(SignUpPageState.initial());
 
   final BottomSheetManager _bottomSheetManager;
   final DialogManager _dialogManager;
+  final PageNavigator _pageNavigator;
 
   String _repeatedPasswordValue = '';
 
@@ -98,9 +101,9 @@ class SignUpPageCubit extends Cubit<SignUpPageState> {
   void onToggleLegalTerms({required bool? value}) =>
       emit(state.copyWith(agreedToLegalTerms: value ?? false));
 
-  void onPrivacyPolicyPressed() {}
+  void onPrivacyPolicyPressed() => _pageNavigator.toPrivacyPolicyPage();
 
-  void onTermsOfServicePressed() {}
+  void onTermsOfServicePressed() => _pageNavigator.toTermsOfServicePage();
 
   Future<void> onSignUpPressed() async {
     emit(state.copyWith(validateForm: true));

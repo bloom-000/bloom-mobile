@@ -32,70 +32,79 @@ class _Content extends StatelessWidget {
           children: <Widget>[
             const HeaderContainer(),
             Expanded(
-              child: CustomScrollView(
-                slivers: <Widget>[
-                  const SliverSizedBox(height: 42),
-                  const SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: FieldFullName(),
+              child: BlocBuilder<SignUpPageCubit, SignUpPageState>(
+                buildWhen: (SignUpPageState previous, SignUpPageState current) =>
+                    previous.validateForm != current.validateForm,
+                builder: (_, SignUpPageState state) {
+                  return ValidatedForm(
+                    showErrors: state.validateForm,
+                    child: CustomScrollView(
+                      slivers: <Widget>[
+                        const SliverSizedBox(height: 42),
+                        const SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: FieldFullName(),
+                          ),
+                        ),
+                        const SliverSizedBox(height: 20),
+                        const SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: FieldEmail(),
+                          ),
+                        ),
+                        const SliverSizedBox(height: 20),
+                        SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: FieldBirthDate(),
+                          ),
+                        ),
+                        const SliverSizedBox(height: 20),
+                        const SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: FieldGender(),
+                          ),
+                        ),
+                        const SliverSizedBox(height: 20),
+                        const SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: FieldPassword(),
+                          ),
+                        ),
+                        const SliverSizedBox(height: 20),
+                        const SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: FieldRepeatedPassword(),
+                          ),
+                        ),
+                        const SliverSizedBox(height: 20),
+                        const SliverPadding(
+                          padding: padding,
+                          sliver: SliverToBoxAdapter(
+                            child: LegalTerms(),
+                          ),
+                        ),
+                        SliverFillRemaining(
+                          hasScrollBody: false,
+                          child: Container(
+                            alignment: Alignment.bottomCenter,
+                            width: double.infinity,
+                            padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                            child: const SizedBox(
+                              width: double.infinity,
+                              child: ButtonSignUp(),
+                            ),
+                          ),
+                        ),
+                      ],
                     ),
-                  ),
-                  const SliverSizedBox(height: 20),
-                  const SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: FieldEmail(),
-                    ),
-                  ),
-                  const SliverSizedBox(height: 20),
-                  SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: FieldBirthDate(),
-                    ),
-                  ),
-                  const SliverSizedBox(height: 20),
-                  const SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: FieldGender(),
-                    ),
-                  ),
-                  const SliverSizedBox(height: 20),
-                  const SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: FieldPassword(),
-                    ),
-                  ),
-                  const SliverSizedBox(height: 20),
-                  const SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: FieldRepeatedPassword(),
-                    ),
-                  ),
-                  const SliverSizedBox(height: 20),
-                  const SliverPadding(
-                    padding: padding,
-                    sliver: SliverToBoxAdapter(
-                      child: LegalTerms(),
-                    ),
-                  ),
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Container(
-                      alignment: Alignment.bottomCenter,
-                      width: double.infinity,
-                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                      child: const SizedBox(
-                        width: double.infinity,
-                        child: ButtonSignUp(),
-                      ),
-                    ),
-                  ),
-                ],
+                  );
+                },
               ),
             ),
           ],

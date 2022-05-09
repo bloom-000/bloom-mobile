@@ -17,4 +17,8 @@ class PageNavigator {
   void toSignUpPage() => GlobalNavigator.pushNamed(Routes.signUp);
 
   void toSignInPage() => GlobalNavigator.pushNamed(Routes.signIn);
+
+  void toTermsOfServicePage() => GlobalNavigator.pushNamed(Routes.termsOfService);
+
+  void toPrivacyPolicyPage() => GlobalNavigator.pushNamed(Routes.privacyPolicy);
 }

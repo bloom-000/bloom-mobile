@@ -17,6 +17,7 @@ class AppTranslations extends Translations {
     TkCommon.signIn: 'Sign in',
     TkCommon.signUp: 'Sign up',
     TkCommon.and: 'and',
+    TkCommon.lastUpdatedAt: 'Last updated at',
 
     TkFieldHint.emailAddress: 'Email address',
     TkFieldHint.password: 'Password',
@@ -54,5 +55,9 @@ class AppTranslations extends Translations {
     TkSignUp.legalCaptionStart: 'I agree with provided ',
     TkSignUp.privacyPolicy: 'privacy policy',
     TkSignUp.termsOfService: 'terms of service',
+
+    TkTermsOfService.header: 'Terms of service',
+
+    TkPrivacyPolicy.header: 'Privacy policy'
   };
 }

@@ -4,6 +4,7 @@ abstract class TkCommon {
   static const String signIn = 'TkCommon.signIn';
   static const String signUp = 'TkCommon.signUp';
   static const String and = 'TkCommon.and';
+  static const String lastUpdatedAt = 'TkCommon.lastUpdatedAt';
 }
 
 abstract class TkFieldHint {
@@ -61,4 +62,12 @@ abstract class TkSignUp {
   static const String legalCaptionStart = 'TkSignUp.legalCaptionStart';
   static const String privacyPolicy = 'TkSignUp.privacyPolicy';
   static const String termsOfService = 'TkSignUp.termsOfService';
+}
+
+abstract class TkTermsOfService {
+  static const String header = 'TkTermsOfService.header';
+}
+
+abstract class TkPrivacyPolicy {
+  static const String header = 'TkPrivacyPolicy.header';
 }

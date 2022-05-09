@@ -10,9 +10,15 @@ class ButtonSignUp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: context.read<SignUpPageCubit>().onSignUpPressed,
-      child: Text(TkCommon.signUp.i18n),
+    return BlocBuilder<SignUpPageCubit, SignUpPageState>(
+      buildWhen: (SignUpPageState previous, SignUpPageState current) => previous.agreedToLegalTerms != current.agreedToLegalTerms,
+      builder: (_, SignUpPageState state) {
+        return TextButton(
+          onPressed:
+              state.agreedToLegalTerms ? context.read<SignUpPageCubit>().onSignUpPressed : null,
+          child: Text(TkCommon.signUp.i18n),
+        );
+      },
     );
   }
 }
