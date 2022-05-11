@@ -10,6 +10,9 @@ import '../schema/authentication/recover_password_send_verification_code_body.da
 import '../schema/authentication/request_recover_password_body.dart';
 import '../schema/authentication/sign_in_body.dart';
 import '../schema/authentication/sign_up_body.dart';
+import '../schema/category/category_schema.dart';
+import '../schema/product/product_schema.dart';
+import '../schema/product/products_page_schema.dart';
 
 part 'api_service.g.dart';
 
@@ -38,4 +41,25 @@ abstract class ApiService {
   Future<void> recoverPasswordSendVerificationCode(
     @Body() RecoverPasswordSendVerificationCodeBody body,
   );
+
+  @GET('/products/promoted')
+  Future<List<ProductSchema>> getPromotedProducts();
+
+  @GET('/products/{id}')
+  Future<ProductSchema> getProduct(@Path('id') String id);
+
+  @GET('/products')
+  Future<ProductsPageSchema> getProducts(
+    @Query('categoryIds') List<String>? categoryIds,
+    @Query('fromPrice') double? fromPrice,
+    @Query('toPrice') double? toPrice,
+    @Query('sortOptions') List<String>? sortOptions,
+    @Query('ratings') List<int>? ratings,
+    @Query('searchKeyword') String? searchKeyword,
+    @Query('page') int page,
+    @Query('pageSize') int pageSize,
+  );
+
+  @GET('/categories/all')
+  Future<List<CategorySchema>> getAllCategories();
 }
