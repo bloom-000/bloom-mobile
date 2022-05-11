@@ -7,7 +7,6 @@ import '../failure/authentication/recover_password_send_verification_code_failur
 import '../failure/authentication/request_recover_password_failure.dart';
 import '../failure/authentication/sign_in_failure.dart';
 import '../failure/authentication/sign_up_failure.dart';
-import '../model/authentication/authentication_payload.dart';
 import '../model/authentication/recover_password_confirm_code_response.dart';
 
 abstract class AuthenticationManager {
@@ -38,7 +37,7 @@ abstract class AuthenticationManager {
     required String code,
   });
 
-  Future<Either<RecoverPasswordFailure, AuthenticationPayload>> recoverPassword({
+  Future<Either<RecoverPasswordFailure, Unit>> recoverPassword({
     required String uuid,
     required String newPassword,
   });

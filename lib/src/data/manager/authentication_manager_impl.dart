@@ -128,7 +128,7 @@ class AuthenticationManagerImpl implements AuthenticationManager {
   }
 
   @override
-  Future<Either<RecoverPasswordFailure, AuthenticationPayload>> recoverPassword({
+  Future<Either<RecoverPasswordFailure, Unit>> recoverPassword({
     required String uuid,
     required String newPassword,
   }) async {
@@ -138,8 +138,21 @@ class AuthenticationManagerImpl implements AuthenticationManager {
       newPassword: newPassword,
     );
 
-    return result
-        .map((AuthenticationPayloadSchema r) => _authenticationPayloadMapper.mapToRight(r));
+    if (result.isLeft()) {
+      return result.map((_) => unit);
+    }
+
+    final AuthenticationPayload authenticationPayload =
+        _authenticationPayloadMapper.mapToRight(result.rightOrThrow);
+
+    if (authenticationPayload.accessToken == null || authenticationPayload.refreshToken == null) {
+      return left(const RecoverPasswordFailure.unknown());
+    }
+
+    await _authenticationTokenStore.writeAccessToken(authenticationPayload.accessToken!);
+    await _authenticationTokenStore.writeRefreshToken(authenticationPayload.refreshToken!);
+
+    return result.map((_) => unit);
   }
 
   @override

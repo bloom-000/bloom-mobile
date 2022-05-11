@@ -1,3 +1,4 @@
+import 'package:injectable/injectable.dart';
 import 'package:static_i18n/static_i18n.dart';
 
 import '../../../domain/failure/authentication/recover_password_failure.dart';
@@ -5,6 +6,7 @@ import '../../i18n/translation_keys.dart';
 import '../core/failure_notifier.dart';
 import '../core/toast_notifier.dart';
 
+@injectable
 class RecoverPasswordFailureNotifier extends FailureNotifier<RecoverPasswordFailure> {
   RecoverPasswordFailureNotifier(
     this._toastNotifier,

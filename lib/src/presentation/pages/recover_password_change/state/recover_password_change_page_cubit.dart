@@ -3,8 +3,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:injectable/injectable.dart';
 
+import '../../../../domain/failure/authentication/recover_password_failure.dart';
+import '../../../../domain/manager/authentication_manager.dart';
 import '../../../navigation/page_navigator.dart';
 import '../../../navigation/route_args/recover_password_change_page_args.dart';
+import '../../../notifier/failure_notifiers/recover_password_failure_notifier.dart';
 
 part 'recover_password_change_page_cubit.freezed.dart';
 
@@ -16,6 +19,7 @@ class RecoverPasswordChangePageState with _$RecoverPasswordChangePageState {
     required bool validateForm,
     required bool isPasswordFieldObscured,
     required bool isRepeatedPasswordFieldObscured,
+    required bool isSubmitting,
   }) = _RecoverPasswordChangePageState;
 
   factory RecoverPasswordChangePageState.initial() => RecoverPasswordChangePageState(
@@ -24,6 +28,7 @@ class RecoverPasswordChangePageState with _$RecoverPasswordChangePageState {
         validateForm: false,
         isPasswordFieldObscured: true,
         isRepeatedPasswordFieldObscured: true,
+        isSubmitting: false,
       );
 }
 
@@ -31,17 +36,19 @@ class RecoverPasswordChangePageState with _$RecoverPasswordChangePageState {
 class RecoverPasswordChangePageCubit extends Cubit<RecoverPasswordChangePageState> {
   RecoverPasswordChangePageCubit(
     this._pageNavigator,
+    this._authenticationManager,
+    this._recoverPasswordFailureNotifier,
   ) : super(RecoverPasswordChangePageState.initial());
 
   final PageNavigator _pageNavigator;
+  final AuthenticationManager _authenticationManager;
+  final RecoverPasswordFailureNotifier _recoverPasswordFailureNotifier;
 
   late final RecoverPasswordChangePageArgs _args;
 
   String _repeatedPasswordValue = '';
 
-  void init(RecoverPasswordChangePageArgs args) {
-    _args = args;
-  }
+  void init(RecoverPasswordChangePageArgs args) => _args = args;
 
   void onPasswordChanged(String password) => emit(state.copyWith(
         password: Password(password),
@@ -67,5 +74,18 @@ class RecoverPasswordChangePageCubit extends Cubit<RecoverPasswordChangePageStat
     if (!state.password.isValid || !state.repeatedPassword.isValid) {
       return;
     }
+
+    emit(state.copyWith(isSubmitting: true));
+    final Either<RecoverPasswordFailure, Unit> result =
+        await _authenticationManager.recoverPassword(
+      uuid: _args.uuid,
+      newPassword: state.password.getOrThrow,
+    );
+    emit(state.copyWith(isSubmitting: false));
+
+    result.fold(
+      _recoverPasswordFailureNotifier.notify,
+      (_) => _pageNavigator.toMainPage(),
+    );
   }
 }
