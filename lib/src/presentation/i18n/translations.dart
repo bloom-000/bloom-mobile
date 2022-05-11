@@ -80,6 +80,7 @@ class AppTranslations extends Translations {
     TkRecoverPasswordConfirm.helperCaption2: 'If you have not received one, click resend code button bellow',
     TkRecoverPasswordConfirm.captionDidntGetCode: 'Didn\'t get a verification code? ',
     TkRecoverPasswordConfirm.buttonResend: 'Resend',
+    TkRecoverPasswordConfirm.captionResendIn: 'Resend code again in',
 
     TkRecoverPasswordChange.header: 'Change\nPassword',
     TkRecoverPasswordChange.buttonChangePassword: 'Change password',

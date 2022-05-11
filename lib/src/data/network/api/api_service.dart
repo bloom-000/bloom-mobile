@@ -6,6 +6,7 @@ import '../schema/authentication/authentication_payload_schema.dart';
 import '../schema/authentication/recover_password_body.dart';
 import '../schema/authentication/recover_password_confirm_code_body.dart';
 import '../schema/authentication/recover_password_confirm_code_response_schema.dart';
+import '../schema/authentication/recover_password_send_verification_code_body.dart';
 import '../schema/authentication/request_recover_password_body.dart';
 import '../schema/authentication/sign_in_body.dart';
 import '../schema/authentication/sign_up_body.dart';
@@ -22,14 +23,19 @@ abstract class ApiService {
   @POST('/authentication/sign-up')
   Future<AuthenticationPayloadSchema> signUp(@Body() SignUpBody body);
 
-  @POST('/authentication/request-recover-password')
+  @POST('/authentication/recover-password/request')
   Future<void> requestRecoverPassword(@Body() RequestRecoverPasswordBody body);
 
-  @POST('/authentication/recover-password-confirm-code')
+  @POST('/authentication/recover-password/confirm-code')
   Future<RecoverPasswordConfirmCodeResponseSchema> recoverPasswordConfirmCode(
     @Body() RecoverPasswordConfirmCodeBody body,
   );
 
   @POST('/authentication/recover-password')
   Future<AuthenticationPayloadSchema> recoverPassword(@Body() RecoverPasswordBody body);
+
+  @POST('/authentication/recover-password/send-verification-code')
+  Future<void> recoverPasswordSendVerificationCode(
+    @Body() RecoverPasswordSendVerificationCodeBody body,
+  );
 }

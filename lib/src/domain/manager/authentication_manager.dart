@@ -3,6 +3,7 @@ import 'package:common_models/common_models.dart';
 import '../enum/gender.dart';
 import '../failure/authentication/recover_password_confirm_code_failure.dart';
 import '../failure/authentication/recover_password_failure.dart';
+import '../failure/authentication/recover_password_send_verification_code_failure.dart';
 import '../failure/authentication/request_recover_password_failure.dart';
 import '../failure/authentication/sign_in_failure.dart';
 import '../failure/authentication/sign_up_failure.dart';
@@ -40,5 +41,10 @@ abstract class AuthenticationManager {
   Future<Either<RecoverPasswordFailure, AuthenticationPayload>> recoverPassword({
     required String uuid,
     required String newPassword,
+  });
+
+  Future<Either<RecoverPasswordSendVerificationCodeFailure, Unit>>
+      recoverPasswordSendVerificationCode({
+    required String email,
   });
 }

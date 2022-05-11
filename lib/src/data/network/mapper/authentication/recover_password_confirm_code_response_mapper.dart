@@ -10,7 +10,7 @@ class RecoverPasswordConfirmCodeResponseMapper extends BaseMapper<
   @override
   RecoverPasswordConfirmCodeResponse mapToRight(RecoverPasswordConfirmCodeResponseSchema l) {
     return RecoverPasswordConfirmCodeResponse(
-      uuid: l.uuid,
+      uuid: l.uuid ?? '',
     );
   }
 }

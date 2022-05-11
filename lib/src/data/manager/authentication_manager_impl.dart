@@ -4,6 +4,7 @@ import 'package:injectable/injectable.dart';
 import '../../domain/enum/gender.dart';
 import '../../domain/failure/authentication/recover_password_confirm_code_failure.dart';
 import '../../domain/failure/authentication/recover_password_failure.dart';
+import '../../domain/failure/authentication/recover_password_send_verification_code_failure.dart';
 import '../../domain/failure/authentication/request_recover_password_failure.dart';
 import '../../domain/failure/authentication/sign_in_failure.dart';
 import '../../domain/failure/authentication/sign_up_failure.dart';
@@ -140,4 +141,11 @@ class AuthenticationManagerImpl implements AuthenticationManager {
     return result
         .map((AuthenticationPayloadSchema r) => _authenticationPayloadMapper.mapToRight(r));
   }
+
+  @override
+  Future<Either<RecoverPasswordSendVerificationCodeFailure, Unit>>
+      recoverPasswordSendVerificationCode({
+    required String email,
+  }) async =>
+          _authenticationRemoteService.recoverPasswordSendVerificationCode(email: email);
 }

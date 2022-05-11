@@ -79,9 +79,14 @@ class _Content extends StatelessWidget {
                 child: Container(
                   alignment: Alignment.bottomCenter,
                   padding: const EdgeInsets.fromLTRB(16, 0, 16, 12),
-                  child: const SizedBox(
-                    width: double.infinity,
-                    child: ButtonContinue(),
+                  child: Column(
+                    mainAxisSize: MainAxisSize.min,
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: const <Widget>[
+                      ButtonContinue(),
+                      SizedBox(height: 8),
+                      ButtonResendCode(),
+                    ],
                   ),
                 ),
               ),

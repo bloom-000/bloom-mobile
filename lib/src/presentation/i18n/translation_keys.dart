@@ -97,6 +97,7 @@ abstract class TkRecoverPasswordConfirm {
   static const String helperCaption2 = 'TkRecoverPasswordConfirm.helperCaption2';
   static const String captionDidntGetCode = 'TkRecoverPasswordConfirm.captionDidntGetCode';
   static const String buttonResend = 'TkRecoverPasswordConfirm.buttonResend';
+  static const String captionResendIn = 'TkRecoverPasswordConfirm.captionResendIn';
 }
 
 abstract class TkRecoverPasswordChange {

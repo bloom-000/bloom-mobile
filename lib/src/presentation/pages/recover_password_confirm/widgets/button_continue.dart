@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:static_i18n/static_i18n.dart';
 
 import '../../../i18n/translation_keys.dart';
+import '../../../widgets/loading_text_button.dart';
 import '../state/recover_password_confirm_page_cubit.dart';
 
 class ButtonContinue extends StatelessWidget {
@@ -15,13 +16,15 @@ class ButtonContinue extends StatelessWidget {
         RecoverPasswordConfirmPageState previous,
         RecoverPasswordConfirmPageState current,
       ) =>
-          previous.canContinue != current.canContinue,
+          previous.canContinue != current.canContinue ||
+          previous.isSubmitting != current.isSubmitting,
       builder: (_, RecoverPasswordConfirmPageState state) {
-        return TextButton(
+        return LoadingTextButton(
           onPressed: state.canContinue
               ? context.read<RecoverPasswordConfirmPageCubit>().onContinuePressed
               : null,
-          child: Text(TkCommon.continue_.i18n),
+          label: TkCommon.continue_.i18n,
+          isLoading: state.isSubmitting,
         );
       },
     );

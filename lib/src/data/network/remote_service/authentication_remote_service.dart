@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../domain/failure/authentication/recover_password_confirm_code_failure.dart';
 import '../../../domain/failure/authentication/recover_password_failure.dart';
+import '../../../domain/failure/authentication/recover_password_send_verification_code_failure.dart';
 import '../../../domain/failure/authentication/request_recover_password_failure.dart';
 import '../../../domain/failure/authentication/sign_in_failure.dart';
 import '../../../domain/failure/authentication/sign_up_failure.dart';
@@ -13,6 +14,7 @@ import '../schema/authentication/authentication_payload_schema.dart';
 import '../schema/authentication/recover_password_body.dart';
 import '../schema/authentication/recover_password_confirm_code_body.dart';
 import '../schema/authentication/recover_password_confirm_code_response_schema.dart';
+import '../schema/authentication/recover_password_send_verification_code_body.dart';
 import '../schema/authentication/request_recover_password_body.dart';
 import '../schema/authentication/sign_in_body.dart';
 import '../schema/authentication/sign_up_body.dart';
@@ -169,6 +171,37 @@ class AuthenticationRemoteService extends BaseService {
       },
       onNetworkError: () => const RecoverPasswordFailure.network(),
       onUnknownError: (_) => const RecoverPasswordFailure.unknown(),
+    );
+  }
+
+  Future<Either<RecoverPasswordSendVerificationCodeFailure, Unit>>
+      recoverPasswordSendVerificationCode({
+    required String email,
+  }) async {
+    return safeCall(
+      call: () async {
+        final RecoverPasswordSendVerificationCodeBody body =
+            RecoverPasswordSendVerificationCodeBody(
+          email: email,
+        );
+
+        await _apiService.recoverPasswordSendVerificationCode(body);
+
+        return unit;
+      },
+      onResponseError: (Response<dynamic>? response) {
+        final ErrorResponseSchema errorResponse =
+            ErrorResponseSchema.fromJson(response!.data! as Map<String, dynamic>);
+        switch (errorResponse.message) {
+          case 'RECOVER_PASSWORD_CACHE_NOT_FOUND':
+            return const RecoverPasswordSendVerificationCodeFailure.requestNotFound();
+          case 'RECOVER_PASSWORD_REQUEST_TIMED_OUT':
+            return const RecoverPasswordSendVerificationCodeFailure.timedOut();
+        }
+        return const RecoverPasswordSendVerificationCodeFailure.unknown();
+      },
+      onNetworkError: () => const RecoverPasswordSendVerificationCodeFailure.network(),
+      onUnknownError: (_) => const RecoverPasswordSendVerificationCodeFailure.unknown(),
     );
   }
 }
