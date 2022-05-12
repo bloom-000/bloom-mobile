@@ -1,23 +1,31 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../di/injection_config.dart';
-import '../../../domain/manager/authentication_manager.dart';
-import '../../navigation/page_navigator.dart';
+import 'state/main_page_cubit.dart';
+import 'widgets/widgets.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: TextButton(
-          onPressed: () async {
-            await getIt<AuthenticationManager>().signOut();
-            getIt<PageNavigator>().toWelcomePage();
-          },
-          child: const Text('Sign out'),
-        ),
+    return BlocProvider<MainPageCubit>(
+      create: (_) => getIt<MainPageCubit>(),
+      child: const _Content(),
+    );
+  }
+}
+
+class _Content extends StatelessWidget {
+  const _Content({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      bottomNavigationBar: MainBottomNav(),
+      body: SafeArea(
+        child: MainContent(),
       ),
     );
   }

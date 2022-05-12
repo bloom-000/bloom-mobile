@@ -8,9 +8,11 @@ import '../core/toast_notifier.dart';
 
 @injectable
 class SignUpFailureNotifier extends FailureNotifier<SignUpFailure> {
-  final ToastNotifier _toastNotifier;
+  SignUpFailureNotifier(
+    this._toastNotifier,
+  );
 
-  SignUpFailureNotifier(this._toastNotifier);
+  final ToastNotifier _toastNotifier;
 
   @override
   void notify(SignUpFailure failure) {

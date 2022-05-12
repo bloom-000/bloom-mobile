@@ -109,6 +109,8 @@ abstract class AppTheme {
       backgroundColor: Palette.primaryContainer,
       selectedItemColor: Palette.secondary,
       unselectedItemColor: Palette.primary,
+      selectedIconTheme: IconThemeData(color: Palette.secondary),
+      unselectedIconTheme: IconThemeData(color: Palette.primaryLight),
     ),
     scrollbarTheme: ScrollbarThemeData(
       // thumbColor: MaterialStateProperty.all(Palette.scrollBarThumb),
@@ -130,6 +132,7 @@ abstract class AppTheme {
       ),
     ),
     switchTheme: SwitchThemeData(
+      splashRadius: 20,
       trackColor: MaterialStateProperty.resolveWith(
         (Set<MaterialState> states) => states.contains(MaterialState.disabled)
             ? Palette.secondaryElement

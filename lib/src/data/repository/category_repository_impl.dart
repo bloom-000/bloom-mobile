@@ -22,6 +22,6 @@ class CategoryRepositoryImpl implements CategoryRepository {
     final Either<FetchFailure, List<CategorySchema>> result =
         await _categoryRemoteService.getAllCategories();
 
-    return result.map((r) => r.map(_categoryMapper.mapToRight).toList());
+    return result.map((List<CategorySchema> r) => r.map(_categoryMapper.mapToRight).toList());
   }
 }

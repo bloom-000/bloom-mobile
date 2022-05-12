@@ -13,6 +13,10 @@ abstract class Assets {
   static const String iconGoogle = '$_icons/google.svg';
   static const String iconLock = '$_icons/lock.svg';
   static const String iconLogo = '$_icons/logo.svg';
+  static const String iconHeart = '$_icons/heart.svg';
+  static const String iconHome = '$_icons/home.svg';
+  static const String iconShoppingCart = '$_icons/shopping_cart.svg';
+  static const String iconUser = '$_icons/user.svg';
 
   static const String imageWelcomePager1 = '$_images/welcome_pager_1.jpg';
 }
