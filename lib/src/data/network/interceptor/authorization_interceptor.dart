@@ -6,6 +6,7 @@ import 'package:dio/dio.dart';
 
 import '../../../domain/store/authentication_token_store.dart';
 import '../../../presentation/navigation/page_navigator.dart';
+import '../schema/authentication/authentication_payload_schema.dart';
 
 const int kNetworkTimeout = 20000;
 
@@ -52,15 +53,15 @@ class AuthorizationInterceptor extends Interceptor {
     try {
       final Response<dynamic> response = await _dio.post(
         '$_baseUrl/authentication/refresh',
-        options: Options(headers: <String, String>{
-          HttpHeaders.authorizationHeader: refreshToken,
-        }),
+        data: <String, String>{'refreshToken': refreshToken},
       );
-      final String? newAccessToken = response.data['refreshToken'] as String?;
-      if (newAccessToken != null) {
-        _authenticationTokenStore.writeAccessToken(newAccessToken);
-      } else {
+      final AuthenticationPayloadSchema payloadSchema =
+          AuthenticationPayloadSchema.fromJson(response.data as Map<String, dynamic>);
+      if (payloadSchema.refreshToken == null || payloadSchema.accessToken == null) {
         await _clearExit();
+      } else {
+        await _authenticationTokenStore.writeAccessToken(payloadSchema.accessToken!);
+        await _authenticationTokenStore.writeRefreshToken(payloadSchema.refreshToken!);
       }
     } on DioError catch (e) {
       if (e.response?.statusCode == 401) {

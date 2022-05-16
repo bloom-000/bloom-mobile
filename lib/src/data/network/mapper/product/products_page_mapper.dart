@@ -20,7 +20,7 @@ class ProductsPageMapper extends BaseMapper<ProductsPageSchema, DataPage<Product
 
     return DataPage<Product>(
       items: items,
-      count: l.count ?? 0,
+      count: l.total ?? 0,
     );
   }
 }

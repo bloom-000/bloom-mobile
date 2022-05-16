@@ -32,7 +32,7 @@ abstract class NetworkModule {
           connectTimeout: 20000,
           sendTimeout: 20000,
         ),
-      ),
+      )..interceptors.add(PrettyLogInterceptor(logPrint: logger.d)),
       pageNavigator,
       Constants.apiUrl,
     ));

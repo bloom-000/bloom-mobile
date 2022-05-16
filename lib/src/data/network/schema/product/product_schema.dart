@@ -15,6 +15,7 @@ class ProductSchema with _$ProductSchema {
     String? updatedAt,
     String? categoryId,
     String? description,
+    String? name,
     double? price,
     double? oldPrice,
     int? stockQuantity,

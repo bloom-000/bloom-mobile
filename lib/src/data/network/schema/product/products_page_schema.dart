@@ -10,7 +10,7 @@ part 'products_page_schema.g.dart';
 class ProductsPageSchema with _$ProductsPageSchema {
   const factory ProductsPageSchema({
     List<ProductSchema>? data,
-    int? count,
+    int? total,
   }) = _ProductsPageSchema;
 
   factory ProductsPageSchema.fromJson(Map<String, dynamic> json) =>

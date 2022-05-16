@@ -17,6 +17,8 @@ abstract class Assets {
   static const String iconHome = '$_icons/home.svg';
   static const String iconShoppingCart = '$_icons/shopping_cart.svg';
   static const String iconUser = '$_icons/user.svg';
+  static const String iconSearch = '$_icons/search.svg';
+  static const String iconPackage = '$_icons/package.svg';
 
   static const String imageWelcomePager1 = '$_images/welcome_pager_1.jpg';
 }

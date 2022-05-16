@@ -7,6 +7,8 @@ abstract class TkCommon {
   static const String lastUpdatedAt = 'TkCommon.lastUpdatedAt';
   static const String continue_ = 'TkCommon.continue';
   static const String error = 'TkCommon.error';
+  static const String off = 'TkCommon.off';
+  static const String all = 'TkCommon.all';
 }
 
 abstract class TkError {
@@ -34,7 +36,8 @@ abstract class TkValidationError {
   static const String fieldIsRequired = 'TkValidationError.fieldIsRequired';
   static const String invalidEmail = 'TkValidationError.invalidEmail';
   static const String passwordIsTooShort = 'TkValidationError.passwordIsTooShort';
-  static const String repeatedPasswordDoesNotMatch = 'TkValidationError.repeatedPasswordDoesNotMatch';
+  static const String repeatedPasswordDoesNotMatch =
+      'TkValidationError.repeatedPasswordDoesNotMatch';
   static const String nameIsTooShort = 'TkValidationError.nameIsTooShort';
 }
 
@@ -103,4 +106,10 @@ abstract class TkRecoverPasswordConfirm {
 abstract class TkRecoverPasswordChange {
   static const String header = 'TkRecoverPasswordChange.header';
   static const String buttonChangePassword = 'TkRecoverPasswordChange.buttonChangePassword';
+}
+
+abstract class TkHome {
+  static const String buttonShopNow = 'TkHome.buttonShopNow';
+  static const String headerTrendyProducts = 'TkHome.headerTrendyProducts';
+  static const String headerFindMore = 'TkHome.headerFindMore';
 }

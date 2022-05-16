@@ -28,7 +28,7 @@ packages:
       name: args
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.0"
+    version: "2.3.1"
   async:
     dependency: transitive
     description:
@@ -77,7 +77,7 @@ packages:
       name: build_runner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.10"
+    version: "2.1.11"
   build_runner_core:
     dependency: transitive
     description:
@@ -98,7 +98,7 @@ packages:
       name: built_value
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "8.2.3"
+    version: "8.3.0"
   characters:
     dependency: transitive
     description:
@@ -140,13 +140,13 @@ packages:
       name: collection
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.15.0"
+    version: "1.16.0"
   common_models:
     dependency: "direct main"
     description:
       path: "packages/common_models"
       ref: HEAD
-      resolved-ref: a7c340ddd1ad0a04dd8d4266e110e7deba824c25
+      resolved-ref: "55e31a73ce6e66188d47083a46bcd1979af1cf36"
       url: "https://github.com/kume1a/flutter_common.git"
     source: git
     version: "0.0.4"
@@ -155,7 +155,7 @@ packages:
     description:
       path: "packages/common_network_components"
       ref: HEAD
-      resolved-ref: a7c340ddd1ad0a04dd8d4266e110e7deba824c25
+      resolved-ref: "55e31a73ce6e66188d47083a46bcd1979af1cf36"
       url: "https://github.com/kume1a/flutter_common.git"
     source: git
     version: "0.0.7"
@@ -164,7 +164,7 @@ packages:
     description:
       path: "packages/common_utilities"
       ref: HEAD
-      resolved-ref: a7c340ddd1ad0a04dd8d4266e110e7deba824c25
+      resolved-ref: "55e31a73ce6e66188d47083a46bcd1979af1cf36"
       url: "https://github.com/kume1a/flutter_common.git"
     source: git
     version: "0.0.1"
@@ -173,7 +173,7 @@ packages:
     description:
       path: "packages/common_widgets"
       ref: HEAD
-      resolved-ref: a7c340ddd1ad0a04dd8d4266e110e7deba824c25
+      resolved-ref: "55e31a73ce6e66188d47083a46bcd1979af1cf36"
       url: "https://github.com/kume1a/flutter_common.git"
     source: git
     version: "0.0.6"
@@ -225,7 +225,7 @@ packages:
       name: fixnum
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.0"
+    version: "1.0.1"
   flutter:
     dependency: "direct main"
     description: flutter
@@ -256,7 +256,7 @@ packages:
       name: flutter_native_splash
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.6"
+    version: "2.2.0+1"
   flutter_secure_storage:
     dependency: "direct main"
     description:
@@ -317,7 +317,7 @@ packages:
       name: freezed
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.3"
+    version: "2.0.3+1"
   freezed_annotation:
     dependency: "direct main"
     description:
@@ -351,7 +351,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: "36bd77c744e4220631fa1f591030c3b29c368b52"
+      resolved-ref: "74dc93de05df265e6761607039e5fba8547c772b"
       url: "https://github.com/kume1a/flutter_global_navigator.git"
     source: git
     version: "0.0.1"
@@ -417,7 +417,7 @@ packages:
       name: js
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.6.3"
+    version: "0.6.4"
   json_annotation:
     dependency: "direct main"
     description:
@@ -466,7 +466,7 @@ packages:
       name: material_color_utilities
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "0.1.3"
+    version: "0.1.4"
   meta:
     dependency: transitive
     description:
@@ -501,7 +501,7 @@ packages:
       name: path
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.8.0"
+    version: "1.8.1"
   path_drawing:
     dependency: transitive
     description:
@@ -522,7 +522,7 @@ packages:
       name: petitparser
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "4.4.0"
+    version: "5.0.0"
   plugin_platform_interface:
     dependency: transitive
     description:
@@ -631,7 +631,7 @@ packages:
     description:
       path: "."
       ref: HEAD
-      resolved-ref: e62dc2468b4db1622b5fa8dfb21ad368adfe4fe9
+      resolved-ref: d161b472b5fe158b8d8b86faac7e4b04644c10af
       url: "https://github.com/kume1a/flutter_static_i18n.git"
     source: git
     version: "0.0.1"
@@ -655,7 +655,7 @@ packages:
       name: string_scanner
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.1.0"
+    version: "1.1.1"
   term_glyph:
     dependency: transitive
     description:
@@ -683,7 +683,7 @@ packages:
       name: typed_data
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.3.0"
+    version: "1.3.1"
   universal_io:
     dependency: transitive
     description:
@@ -697,7 +697,7 @@ packages:
       name: vector_math
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.1.1"
+    version: "2.1.2"
   watcher:
     dependency: transitive
     description:
@@ -718,14 +718,14 @@ packages:
       name: xml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "5.3.1"
+    version: "5.4.1"
   yaml:
     dependency: transitive
     description:
       name: yaml
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "3.1.0"
+    version: "3.1.1"
 sdks:
-  dart: ">=2.16.2 <3.0.0"
+  dart: ">=2.17.0 <3.0.0"
   flutter: ">=2.4.0-0.0.pre"

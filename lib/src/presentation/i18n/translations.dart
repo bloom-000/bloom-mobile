@@ -20,6 +20,8 @@ class AppTranslations extends Translations {
     TkCommon.lastUpdatedAt: 'Last updated at',
     TkCommon.continue_: 'Continue',
     TkCommon.error: 'Error',
+    TkCommon.off: 'off',
+    TkCommon.all: 'All',
 
     TkError.unknown: 'Unknown error',
     TkError.network: 'Network error',
@@ -84,5 +86,9 @@ class AppTranslations extends Translations {
 
     TkRecoverPasswordChange.header: 'Change\nPassword',
     TkRecoverPasswordChange.buttonChangePassword: 'Change password',
+
+    TkHome.buttonShopNow: 'Shop now',
+    TkHome.headerTrendyProducts: 'Trendy Products',
+    TkHome.headerFindMore: 'Find more',
   };
 }

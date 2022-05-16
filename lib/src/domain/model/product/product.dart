@@ -11,6 +11,7 @@ class Product with _$Product {
     required String id,
     required DateTime? createdAt,
     required DateTime? updatedAt,
+    required String name,
     required String categoryId,
     required String? description,
     required double price,

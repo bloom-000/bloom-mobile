@@ -36,7 +36,6 @@ class ProductRepositoryImpl implements ProductRepository {
   @override
   Future<Either<FetchFailure, DataPage<Product>>> getProducts({
     required int page,
-    required int pageSize,
     List<String>? categoryIds,
     double? fromPrice,
     double? toPrice,
@@ -52,7 +51,7 @@ class ProductRepositoryImpl implements ProductRepository {
       ratings: ratings,
       searchKeyword: searchKeyword,
       page: page,
-      pageSize: pageSize,
+      pageSize: 15,
     );
 
     return result.map(_productsPageMapper.mapToRight);

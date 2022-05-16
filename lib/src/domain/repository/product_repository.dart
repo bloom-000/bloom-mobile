@@ -10,7 +10,6 @@ abstract class ProductRepository {
 
   Future<Either<FetchFailure, DataPage<Product>>> getProducts({
     required int page,
-    required int pageSize,
     List<String>? categoryIds,
     double? fromPrice,
     double? toPrice,
