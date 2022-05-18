@@ -46,13 +46,16 @@ class _Item extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData theme = Theme.of(context);
 
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 6),
-      child: SafeImage(
-        url: '${Constants.apiUrl}/${product.primaryImagePath}',
-        width: 100,
-        height: 100,
-        placeholderColor: theme.colorScheme.secondaryContainer,
+    return GestureDetector(
+      onTap: () => context.read<HomePageTrendyProductsCubit>().onProductPressed(product),
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 6),
+        child: SafeImage(
+          url: '${Constants.apiUrl}/${product.primaryImagePath}',
+          width: 100,
+          height: 100,
+          placeholderColor: theme.colorScheme.secondaryContainer,
+        ),
       ),
     );
   }

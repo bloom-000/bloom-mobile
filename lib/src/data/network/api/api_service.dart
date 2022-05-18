@@ -10,6 +10,8 @@ import '../schema/authentication/recover_password_send_verification_code_body.da
 import '../schema/authentication/request_recover_password_body.dart';
 import '../schema/authentication/sign_in_body.dart';
 import '../schema/authentication/sign_up_body.dart';
+import '../schema/cart_product/cart_products_page_schema.dart';
+import '../schema/cart_product/upsert_cart_product_body.dart';
 import '../schema/category/category_schema.dart';
 import '../schema/product/product_schema.dart';
 import '../schema/product/products_page_schema.dart';
@@ -62,4 +64,13 @@ abstract class ApiService {
 
   @GET('/categories/all')
   Future<List<CategorySchema>> getAllCategories();
+
+  @GET('/cart-products')
+  Future<CartProductsPageSchema> getCartProducts(
+    @Query('page') int page,
+    @Query('pageSize') int pageSize,
+  );
+
+  @POST('/cart-products')
+  Future<void> upsertCartProduct(@Body() UpsertCartProductBody body);
 }

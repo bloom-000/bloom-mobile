@@ -10,4 +10,5 @@ abstract class Routes {
   static const String recoverPasswordRequest = 'recoverPasswordRequest';
   static const String recoverPasswordConfirm = 'recoverPasswordConfirm';
   static const String recoverPasswordChange = 'recoverPasswordChange';
+  static const String product = 'product';
 }

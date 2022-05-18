@@ -20,6 +20,8 @@ abstract class TkError {
   static const String recoverPasswordRequestNotFound = 'TkError.recoverPasswordRequestNotFound';
   static const String recoverPasswordRequestTimedOut = 'TkError.recoverPasswordRequestTimedOut';
   static const String recoverPasswordInvalidCode = 'TkError.recoverPasswordInvalidCode';
+  static const String productNotFound = 'TkError.productNotFound';
+  static const String insufficientStockQuantity = 'TkError.insufficientStockQuantity';
 }
 
 abstract class TkFieldHint {
@@ -112,4 +114,10 @@ abstract class TkHome {
   static const String buttonShopNow = 'TkHome.buttonShopNow';
   static const String headerTrendyProducts = 'TkHome.headerTrendyProducts';
   static const String headerFindMore = 'TkHome.headerFindMore';
+}
+
+abstract class TkProduct {
+  static const String reviews = 'TkProduct.reviews';
+  static const String inStock = 'TkProduct.inStock';
+  static const String addToCart = 'TkProduct.addToCart';
 }

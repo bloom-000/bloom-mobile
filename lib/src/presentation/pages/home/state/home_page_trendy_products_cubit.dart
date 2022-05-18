@@ -9,16 +9,20 @@ import '../../../../domain/model/category/category.dart';
 import '../../../../domain/model/product/product.dart';
 import '../../../../domain/repository/product_repository.dart';
 import '../../../events/event_product.dart';
+import '../../../navigation/page_navigator.dart';
+import '../../../navigation/route_args/product_page_args.dart';
 
 @injectable
 class HomePageTrendyProductsCubit extends DataPagerWithPageCubit<FetchFailure, Product> {
   HomePageTrendyProductsCubit(
     this._productRepository,
     this._eventBus,
+    this._pageNavigator,
   );
 
   final ProductRepository _productRepository;
   final EventBus _eventBus;
+  final PageNavigator _pageNavigator;
 
   StreamSubscription<EventProduct>? _eventProductSub;
 
@@ -49,4 +53,12 @@ class HomePageTrendyProductsCubit extends DataPagerWithPageCubit<FetchFailure, P
         page: page,
         categoryIds: _category != null && _category?.id != null ? <String>[_category!.id!] : null,
       );
+
+  void onProductPressed(Product product) {
+    final ProductPageArgs args = ProductPageArgs(
+      productId: product.id,
+    );
+
+    _pageNavigator.toProductPage(args);
+  }
 }

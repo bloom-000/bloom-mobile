@@ -1,6 +1,7 @@
 import 'package:global_navigator/global_navigator.dart';
 import 'package:injectable/injectable.dart';
 
+import 'route_args/product_page_args.dart';
 import 'route_args/recover_password_change_page_args.dart';
 import 'route_args/recover_password_confirm_page_args.dart';
 import 'routes.dart';
@@ -31,4 +32,7 @@ class PageNavigator {
 
   void toRecoverPasswordChangePage(RecoverPasswordChangePageArgs args) =>
       GlobalNavigator.pushNamed(Routes.recoverPasswordChange, arguments: args);
+
+  void toProductPage(ProductPageArgs args) =>
+      GlobalNavigator.pushNamed(Routes.product, arguments: args);
 }

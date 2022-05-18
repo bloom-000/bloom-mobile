@@ -31,6 +31,8 @@ class AppTranslations extends Translations {
     TkError.recoverPasswordRequestNotFound: 'Recovery request not found',
     TkError.recoverPasswordRequestTimedOut: 'Recovery request timed out, please redo the process',
     TkError.recoverPasswordInvalidCode: 'Invalid code',
+    TkError.productNotFound: 'Product not found',
+    TkError.insufficientStockQuantity: 'Insufficient stock quantity',
 
     TkFieldHint.emailAddress: 'Email address',
     TkFieldHint.password: 'Password',
@@ -90,5 +92,9 @@ class AppTranslations extends Translations {
     TkHome.buttonShopNow: 'Shop now',
     TkHome.headerTrendyProducts: 'Trendy Products',
     TkHome.headerFindMore: 'Find more',
+
+    TkProduct.reviews: 'reviews',
+    TkProduct.inStock: 'in stock',
+    TkProduct.addToCart: 'Add to cart',
   };
 }
