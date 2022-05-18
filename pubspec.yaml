@@ -26,6 +26,7 @@ dependencies:
   json_annotation: ^4.5.0
   logger: ^1.1.0
   retrofit: ^3.0.1+1
+  synchronized: ^3.0.0+2
 
   common_widgets:
     git:

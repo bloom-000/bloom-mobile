@@ -3,6 +3,7 @@ import 'dart:io';
 
 import 'package:common_network_components/common_network_components.dart';
 import 'package:dio/dio.dart';
+import 'package:synchronized/extension.dart';
 
 import '../../../domain/store/authentication_token_store.dart';
 import '../../../presentation/navigation/page_navigator.dart';
@@ -29,7 +30,7 @@ class AuthorizationInterceptor extends Interceptor {
 
     if (accessToken != null) {
       if (JwtDecoder.isExpired(accessToken)) {
-        await _tryRefreshAccessToken();
+        await synchronized(() => _tryRefreshAccessToken());
         accessToken = await _authenticationTokenStore.readAccessToken();
       }
       options.headers[HttpHeaders.authorizationHeader] = 'Bearer $accessToken';
