@@ -22,6 +22,9 @@ class AppTranslations extends Translations {
     TkCommon.error: 'Error',
     TkCommon.off: 'off',
     TkCommon.all: 'All',
+    TkCommon.ok: 'Ok',
+    TkCommon.confirm: 'Confirm',
+    TkCommon.cancel: 'Cancel',
 
     TkError.unknown: 'Unknown error',
     TkError.network: 'Network error',
@@ -96,5 +99,9 @@ class AppTranslations extends Translations {
     TkProduct.reviews: 'reviews',
     TkProduct.inStock: 'in stock',
     TkProduct.addToCart: 'Add to cart',
+
+    TkCart.header: 'Shopping cart',
+    TkCart.proceedToCheckout: 'Proceed to checkout',
+    TkCart.warningCaptionRemoveCartProduct: 'Are you sure to remove selected product from cart?',
   };
 }

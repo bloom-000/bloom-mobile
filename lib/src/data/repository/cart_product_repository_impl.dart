@@ -19,7 +19,7 @@ class CartProductRepositoryImpl implements CartProductRepository {
   final CartProductsPageMapper _cartProductsPageMapper;
 
   @override
-  Future<Either<UpsertCartProductFailure, Unit>> addProductToCart({
+  Future<Either<UpsertCartProductFailure, Unit>> upsertCartProduct({
     required String productId,
     required int quantity,
   }) async {

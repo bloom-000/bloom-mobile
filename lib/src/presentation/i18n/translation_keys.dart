@@ -9,6 +9,9 @@ abstract class TkCommon {
   static const String error = 'TkCommon.error';
   static const String off = 'TkCommon.off';
   static const String all = 'TkCommon.all';
+  static const String ok = 'TkCommon.ok';
+  static const String confirm = 'TkCommon.confirm';
+  static const String cancel = 'TkCommon.cancel';
 }
 
 abstract class TkError {
@@ -120,4 +123,10 @@ abstract class TkProduct {
   static const String reviews = 'TkProduct.reviews';
   static const String inStock = 'TkProduct.inStock';
   static const String addToCart = 'TkProduct.addToCart';
+}
+
+abstract class TkCart {
+  static const String header = 'TkCart.header';
+  static const String proceedToCheckout = 'TkCart.proceedToCheckout';
+  static const String warningCaptionRemoveCartProduct = 'TkCart.warningCaptionRemoveCartProduct';
 }

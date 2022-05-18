@@ -40,7 +40,7 @@ class ProductPageCubit extends Cubit<ProductPageState> {
   Future<void> onAddToCartPressed() async {
     emit(state.copyWith(addToCartInProgress: true));
     final Either<UpsertCartProductFailure, Unit> result =
-        await _cartProductRepository.addProductToCart(
+        await _cartProductRepository.upsertCartProduct(
       productId: _args.productId,
       quantity: state.quantity,
     );

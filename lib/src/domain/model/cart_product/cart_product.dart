@@ -8,6 +8,8 @@ part 'cart_product.freezed.dart';
 class CartProduct with _$CartProduct {
   const factory CartProduct({
     required String id,
+    required int quantity,
+    required String productId,
     required Product? product,
   }) = _CartProduct;
 }

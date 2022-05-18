@@ -20,6 +20,8 @@ class CartProductMapper extends BaseMapper<CartProductSchema, CartProduct> {
 
     return CartProduct(
       id: l.id ?? '',
+      quantity: l.quantity ?? 0,
+      productId: l.productId ?? '',
       product: product,
     );
   }

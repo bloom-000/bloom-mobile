@@ -4,7 +4,7 @@ import '../failure/cart_product/upsert_cart_product_failure.dart';
 import '../model/cart_product/cart_product.dart';
 
 abstract class CartProductRepository {
-  Future<Either<UpsertCartProductFailure, Unit>> addProductToCart({
+  Future<Either<UpsertCartProductFailure, Unit>> upsertCartProduct({
     required String productId,
     required int quantity,
   });

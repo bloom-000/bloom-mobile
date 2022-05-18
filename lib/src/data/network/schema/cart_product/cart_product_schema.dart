@@ -10,6 +10,11 @@ part 'cart_product_schema.g.dart';
 class CartProductSchema with _$CartProductSchema {
   const factory CartProductSchema({
     String? id,
+    String? createdAt,
+    String? updatedAt,
+    String? productId,
+    String? userId,
+    int? quantity,
     ProductSchema? product,
   }) = _CartProductSchema;
 

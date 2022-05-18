@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../../common/bloc/bloc_provider_alias.dart';
 import '../../../di/injection_config.dart';
+import '../cart/cart_page.dart';
 import '../home/home_page.dart';
 import 'state/main_page_cubit.dart';
 import 'widgets/widgets.dart';
@@ -18,6 +19,7 @@ class MainPage extends StatelessWidget {
           create: (_) => getIt<MainPageCubit>(),
         ),
         ...HomePage.blocs(),
+        ...CartPage.blocs(),
       ],
       child: const _Content(),
     );
