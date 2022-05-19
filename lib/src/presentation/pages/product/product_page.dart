@@ -41,6 +41,7 @@ class _Content extends StatelessWidget {
 
     return Scaffold(
       body: SafeArea(
+        top: false,
         child: Column(
           children: <Widget>[
             Expanded(
@@ -49,7 +50,7 @@ class _Content extends StatelessWidget {
                   SliverPersistentHeader(
                     pinned: true,
                     delegate: TopBar(
-                      minExtent: 56,
+                      minExtent: 56 + mediaQueryData.padding.top,
                       maxExtent: mediaQueryData.size.height * .4,
                     ),
                   ),

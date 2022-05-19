@@ -25,6 +25,7 @@ class TopBar implements SliverPersistentHeaderDelegate {
   Widget build(BuildContext context, double shrinkOffset, bool overlapsContent) {
     final double offset = shrinkOffset / maxExtent;
     final ThemeData theme = Theme.of(context);
+    final MediaQueryData mediaQueryData = MediaQuery.of(context);
 
     return Stack(
       fit: StackFit.expand,
@@ -49,21 +50,16 @@ class TopBar implements SliverPersistentHeaderDelegate {
             },
           ),
         ),
-        Positioned(
-          bottom: 0,
-          left: 0,
-          right: 0,
-          child: Container(
-            height: 54,
-            width: maxExtent,
-            decoration: BoxDecoration(
-              color: theme.scaffoldBackgroundColor.withOpacity(offset > .8 ? 1 : 0),
-            ),
+        Positioned.fill(
+          child: ColoredBox(
+            color:
+                theme.scaffoldBackgroundColor.withOpacity(offset > .5 ? 1 - (1 - offset) / .5 : 0),
           ),
         ),
-        const Positioned(
+        Positioned(
           left: 0,
-          child: ClipOval(
+          top: mediaQueryData.padding.top,
+          child: const ClipOval(
             child: Material(
               type: MaterialType.transparency,
               child: DefaultBackButton(),
