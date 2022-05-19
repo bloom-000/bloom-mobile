@@ -10,9 +10,16 @@ import '../schema/authentication/recover_password_send_verification_code_body.da
 import '../schema/authentication/request_recover_password_body.dart';
 import '../schema/authentication/sign_in_body.dart';
 import '../schema/authentication/sign_up_body.dart';
+import '../schema/cart_product/cart_product_schema.dart';
 import '../schema/cart_product/cart_products_page_schema.dart';
 import '../schema/cart_product/upsert_cart_product_body.dart';
 import '../schema/category/category_schema.dart';
+import '../schema/credit_card/create_credit_card_body.dart';
+import '../schema/credit_card/credit_card_schema.dart';
+import '../schema/credit_card/update_credit_card_body.dart';
+import '../schema/delivery_address/create_delivery_address_body.dart';
+import '../schema/delivery_address/delivery_address_schema.dart';
+import '../schema/delivery_address/update_delivery_address_body.dart';
 import '../schema/product/product_schema.dart';
 import '../schema/product/products_page_schema.dart';
 
@@ -73,4 +80,43 @@ abstract class ApiService {
 
   @POST('/cart-products')
   Future<void> upsertCartProduct(@Body() UpsertCartProductBody body);
+
+  @GET('/cart-products/all')
+  Future<List<CartProductSchema>> getAllCartProducts();
+
+  @POST('/delivery-addresses')
+  Future<DeliveryAddressSchema> createDeliveryAddress(@Body() CreateDeliveryAddressBody body);
+
+  @PATCH('/delivery-addresses/{id}')
+  Future<DeliveryAddressSchema> updateDeliveryAddress(
+    @Path('id') String id,
+    @Body() UpdateDeliveryAddressBody body,
+  );
+
+  @DELETE('/delivery-addresses/{id}')
+  Future<void> deleteDeliveryAddress(@Path('id') String id);
+
+  @GET('/delivery-addresses/default')
+  Future<DeliveryAddressSchema> getDefaultDeliveryAddress();
+
+  @GET('/delivery-addresses')
+  Future<List<DeliveryAddressSchema>> getDeliveryAddresses();
+
+  @POST('/credit-cards')
+  Future<CreditCardSchema> createCreditCard(@Body() CreateCreditCardBody body);
+
+  @PATCH('/credit-cards/{id}')
+  Future<CreditCardSchema> updateCreditCard(
+    @Path('id') String id,
+    @Body() UpdateCreditCardBody body,
+  );
+
+  @DELETE('/credit-cards/{id}')
+  Future<void> deleteCreditCard(@Path('id') String id);
+
+  @GET('/credit-cards/default')
+  Future<CreditCardSchema> getDefaultCreditCard();
+
+  @GET('/credit-cards')
+  Future<List<CreditCardSchema>> getCreditCards();
 }

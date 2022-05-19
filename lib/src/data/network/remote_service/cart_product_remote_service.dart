@@ -5,6 +5,7 @@ import 'package:injectable/injectable.dart';
 
 import '../../../domain/failure/cart_product/upsert_cart_product_failure.dart';
 import '../api/api_service.dart';
+import '../schema/cart_product/cart_product_schema.dart';
 import '../schema/cart_product/cart_products_page_schema.dart';
 import '../schema/cart_product/upsert_cart_product_body.dart';
 import '../schema/common/error_response_schema.dart';
@@ -53,4 +54,7 @@ class CartProductRemoteService extends BaseService {
     required int pageSize,
   }) async =>
       safeFetch(() => _apiService.getCartProducts(page, pageSize));
+
+  Future<Either<FetchFailure, List<CartProductSchema>>> getAllCartProducts() async =>
+      safeFetch(() => _apiService.getAllCartProducts());
 }

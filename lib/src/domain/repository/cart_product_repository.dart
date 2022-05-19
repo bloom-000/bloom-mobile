@@ -12,4 +12,6 @@ abstract class CartProductRepository {
   Future<Either<FetchFailure, DataPage<CartProduct>>> getCartProducts({
     required int page,
   });
+
+  Future<Either<FetchFailure, List<CartProduct>>> getAllCartProducts();
 }
