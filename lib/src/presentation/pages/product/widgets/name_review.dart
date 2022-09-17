@@ -8,7 +8,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/product_page_product_cubit.dart';
 
 class NameReview extends StatelessWidget {
-  const NameReview({Key? key}) : super(key: key);
+  const NameReview({super.key});
 
   @override
   Widget build(BuildContext context) {

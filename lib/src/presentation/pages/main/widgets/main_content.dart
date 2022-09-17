@@ -8,7 +8,7 @@ import '../../profile/profile_page.dart';
 import '../state/main_page_cubit.dart';
 
 class MainContent extends StatelessWidget {
-  const MainContent({Key? key}) : super(key: key);
+  const MainContent({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,7 +26,7 @@ class MainContent extends StatelessWidget {
           case 3:
             return const ProfilePage();
           default:
-            return Container(color: Colors.red);
+            return const ColoredBox(color: Colors.red);
         }
       },
     );

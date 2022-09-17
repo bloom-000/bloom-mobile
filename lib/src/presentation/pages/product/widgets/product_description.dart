@@ -6,7 +6,7 @@ import '../../../../domain/model/product/product.dart';
 import '../state/product_page_product_cubit.dart';
 
 class ProductDescription extends StatelessWidget {
-  const ProductDescription({Key? key}) : super(key: key);
+  const ProductDescription({super.key});
 
   @override
   Widget build(BuildContext context) {

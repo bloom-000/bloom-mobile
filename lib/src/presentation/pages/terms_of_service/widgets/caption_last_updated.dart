@@ -6,7 +6,7 @@ import '../../../widgets/shared/caption_last_updated.dart' as shared_widget;
 import '../state/terms_of_service_page_cubit.dart';
 
 class CaptionLastUpdated extends StatelessWidget {
-  const CaptionLastUpdated({Key? key}) : super(key: key);
+  const CaptionLastUpdated({super.key});
 
   @override
   Widget build(BuildContext context) {

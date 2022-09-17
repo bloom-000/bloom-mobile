@@ -53,7 +53,7 @@ class SignInPageCubit extends Cubit<SignInPageState> {
   Future<void> onSignInPressed() async {
     emit(state.copyWith(validateForm: true));
 
-    if (!state.email.isValid || !state.password.isValid) {
+    if (state.email.invalid || state.password.invalid) {
       return;
     }
 

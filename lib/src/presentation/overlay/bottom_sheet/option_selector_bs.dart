@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 
 class OptionSelectorBS<T extends Object?> extends StatelessWidget {
   const OptionSelectorBS({
-    Key? key,
+    super.key,
     required this.header,
     required this.options,
     required this.toStringMapper,
-  }) : super(key: key);
+  });
 
   final String header;
   final List<T> options;

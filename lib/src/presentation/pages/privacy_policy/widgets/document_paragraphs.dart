@@ -6,7 +6,7 @@ import '../../../widgets/shared/document_paragraphs.dart' as shared_widget;
 import '../state/privacy_policy_page_cubit.dart';
 
 class DocumentParagraphs extends StatelessWidget {
-  const DocumentParagraphs({Key? key}) : super(key: key);
+  const DocumentParagraphs({super.key});
 
   @override
   Widget build(BuildContext context) {

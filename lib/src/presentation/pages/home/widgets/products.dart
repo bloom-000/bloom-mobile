@@ -8,7 +8,7 @@ import '../../../../domain/model/product/product.dart';
 import '../state/home_page_products_cubit.dart';
 
 class Products extends StatelessWidget {
-  const Products({Key? key}) : super(key: key);
+  const Products({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -36,9 +36,8 @@ class Products extends StatelessWidget {
 
 class _Item extends StatelessWidget {
   const _Item({
-    Key? key,
     required this.product,
-  }) : super(key: key);
+  });
 
   final Product product;
 
@@ -48,7 +47,7 @@ class _Item extends StatelessWidget {
 
     return GestureDetector(
       onTap: () => context.read<HomePageProductsCubit>().onProductPressed(product),
-      child: Container(
+      child: DecoratedBox(
         decoration: BoxDecoration(
           color: theme.colorScheme.secondaryContainer,
           borderRadius: BorderRadius.circular(4),

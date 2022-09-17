@@ -7,7 +7,7 @@ import '../../../widgets/loading_text_button.dart';
 import '../state/recover_password_change_page_cubit.dart';
 
 class ButtonChangePassword extends StatelessWidget {
-  const ButtonChangePassword({Key? key}) : super(key: key);
+  const ButtonChangePassword({super.key});
 
   @override
   Widget build(BuildContext context) {

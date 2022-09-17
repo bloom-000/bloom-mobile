@@ -8,7 +8,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/home_page_categories_cubit.dart';
 
 class TrendyProductCategories extends StatelessWidget {
-  const TrendyProductCategories({Key? key}) : super(key: key);
+  const TrendyProductCategories({super.key});
 
   @override
   Widget build(BuildContext context) {

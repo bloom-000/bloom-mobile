@@ -9,7 +9,7 @@ import '../../../values/assets.dart';
 import '../state/sign_up_page_cubit.dart';
 
 class FieldBirthDate extends StatelessWidget {
-  FieldBirthDate({Key? key}) : super(key: key);
+  FieldBirthDate({super.key});
 
   final DateFormat _dateFormat = DateFormat('dd/MM/yyyy');
 

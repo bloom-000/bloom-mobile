@@ -9,7 +9,7 @@ import '../state/product_page_cubit.dart';
 import '../state/product_page_product_cubit.dart';
 
 class QuantityPrice extends StatelessWidget {
-  const QuantityPrice({Key? key}) : super(key: key);
+  const QuantityPrice({super.key});
 
   @override
   Widget build(BuildContext context) {

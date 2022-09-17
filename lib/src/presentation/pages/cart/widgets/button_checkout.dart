@@ -6,7 +6,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/cart_page_cubit.dart';
 
 class ButtonCheckout extends StatelessWidget {
-  const ButtonCheckout({Key? key}) : super(key: key);
+  const ButtonCheckout({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -9,7 +9,7 @@ import '../../../values/assets.dart';
 import '../state/sign_up_page_cubit.dart';
 
 class FieldPassword extends StatelessWidget {
-  const FieldPassword({Key? key}) : super(key: key);
+  const FieldPassword({super.key});
 
   @override
   Widget build(BuildContext context) {

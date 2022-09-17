@@ -71,7 +71,7 @@ class RecoverPasswordChangePageCubit extends Cubit<RecoverPasswordChangePageStat
   Future<void> onChangePasswordPressed() async {
     emit(state.copyWith(validateForm: true));
 
-    if (!state.password.isValid || !state.repeatedPassword.isValid) {
+    if (state.password.invalid || state.repeatedPassword.invalid) {
       return;
     }
 

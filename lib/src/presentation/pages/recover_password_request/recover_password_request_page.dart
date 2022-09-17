@@ -11,7 +11,7 @@ import 'state/recover_password_request_page_cubit.dart';
 import 'widgets/widgets.dart';
 
 class RecoverPasswordRequestPage extends StatelessWidget {
-  const RecoverPasswordRequestPage({Key? key}) : super(key: key);
+  const RecoverPasswordRequestPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +23,7 @@ class RecoverPasswordRequestPage extends StatelessWidget {
 }
 
 class _Content extends StatelessWidget {
-  const _Content({Key? key}) : super(key: key);
+  const _Content();
 
   @override
   Widget build(BuildContext context) {

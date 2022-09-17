@@ -6,7 +6,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/sign_in_page_cubit.dart';
 
 class ButtonForgotPassword extends StatelessWidget {
-  const ButtonForgotPassword({Key? key}) : super(key: key);
+  const ButtonForgotPassword({super.key});
 
   @override
   Widget build(BuildContext context) {

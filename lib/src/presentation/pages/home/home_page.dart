@@ -14,7 +14,7 @@ import 'state/home_page_trendy_products_cubit.dart';
 import 'widgets/widgets.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   static List<BlocProviderAlias> blocs() {
     return <BlocProviderAlias>[

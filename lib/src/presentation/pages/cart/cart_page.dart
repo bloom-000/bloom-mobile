@@ -10,7 +10,7 @@ import 'state/cart_page_cubit.dart';
 import 'widgets/widgets.dart';
 
 class CartPage extends StatelessWidget {
-  const CartPage({Key? key}) : super(key: key);
+  const CartPage({super.key});
 
   static List<BlocProviderAlias> blocs() {
     return <BlocProviderAlias>[

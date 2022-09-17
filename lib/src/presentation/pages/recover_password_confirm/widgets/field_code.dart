@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../state/recover_password_confirm_page_cubit.dart';
 
 class FieldCode extends StatelessWidget {
-  const FieldCode({Key? key}) : super(key: key);
+  const FieldCode({super.key});
 
   @override
   Widget build(BuildContext context) {

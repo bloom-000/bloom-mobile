@@ -32,3 +32,4 @@ linter:
     avoid_escaping_inner_quotes: false
     sort_pub_dependencies: false
     avoid_classes_with_only_static_members: false
+    use_setters_to_change_properties: false

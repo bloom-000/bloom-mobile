@@ -9,7 +9,7 @@ import '../../../values/assets.dart';
 import '../state/sign_up_page_cubit.dart';
 
 class FieldRepeatedPassword extends StatelessWidget {
-  const FieldRepeatedPassword({Key? key}) : super(key: key);
+  const FieldRepeatedPassword({super.key});
 
   @override
   Widget build(BuildContext context) {

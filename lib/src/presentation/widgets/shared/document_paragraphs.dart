@@ -5,9 +5,9 @@ import '../../../domain/model/legal_document/legal_document_paragraph.dart';
 
 class DocumentParagraphs extends StatelessWidget {
   const DocumentParagraphs({
-    Key? key,
+    super.key,
     required this.document,
-  }) : super(key: key);
+  });
 
   final LegalDocument document;
 

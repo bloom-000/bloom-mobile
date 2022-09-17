@@ -9,7 +9,7 @@ import '../../../values/assets.dart';
 import '../state/sign_up_page_cubit.dart';
 
 class FieldGender extends StatelessWidget {
-  const FieldGender({Key? key}) : super(key: key);
+  const FieldGender({super.key});
 
   @override
   Widget build(BuildContext context) {

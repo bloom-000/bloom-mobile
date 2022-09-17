@@ -7,7 +7,7 @@ import '../../../widgets/loading_text_button.dart';
 import '../state/sign_in_page_cubit.dart';
 
 class ButtonSignIn extends StatelessWidget {
-  const ButtonSignIn({Key? key}) : super(key: key);
+  const ButtonSignIn({super.key});
 
   @override
   Widget build(BuildContext context) {

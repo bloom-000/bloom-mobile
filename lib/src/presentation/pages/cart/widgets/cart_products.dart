@@ -10,7 +10,7 @@ import '../../../../domain/model/cart_product/cart_product.dart';
 import '../state/cart_page_cart_products_cubit.dart';
 
 class CartProducts extends StatelessWidget {
-  const CartProducts({Key? key}) : super(key: key);
+  const CartProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,9 +38,8 @@ class CartProducts extends StatelessWidget {
 
 class _Item extends StatelessWidget {
   const _Item({
-    Key? key,
     required this.cartProduct,
-  }) : super(key: key);
+  });
 
   final CartProduct cartProduct;
 

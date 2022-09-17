@@ -6,7 +6,7 @@ import '../../../values/assets.dart';
 import '../state/main_page_cubit.dart';
 
 class MainBottomNav extends StatelessWidget {
-  const MainBottomNav({Key? key}) : super(key: key);
+  const MainBottomNav({super.key});
 
   @override
   Widget build(BuildContext context) {

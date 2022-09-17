@@ -8,7 +8,7 @@ import '../../../../domain/model/product/product.dart';
 import '../state/home_page_trendy_products_cubit.dart';
 
 class TrendyProducts extends StatelessWidget {
-  const TrendyProducts({Key? key}) : super(key: key);
+  const TrendyProducts({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -38,7 +38,7 @@ class TrendyProducts extends StatelessWidget {
 }
 
 class _Item extends StatelessWidget {
-  const _Item({Key? key, required this.product}) : super(key: key);
+  const _Item({required this.product});
 
   final Product product;
 

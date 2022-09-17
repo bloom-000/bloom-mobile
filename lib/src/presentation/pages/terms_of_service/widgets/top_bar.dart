@@ -5,7 +5,7 @@ import '../../../i18n/translation_keys.dart';
 import '../../../widgets/default_back_button.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
-  const TopBar({Key? key}) : super(key: key);
+  const TopBar({super.key});
 
   @override
   Size get preferredSize => const Size(0, 56);

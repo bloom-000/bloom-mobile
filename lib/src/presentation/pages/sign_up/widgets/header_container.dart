@@ -7,7 +7,7 @@ import '../../../values/assets.dart';
 import '../../../widgets/default_back_button.dart';
 
 class HeaderContainer extends StatelessWidget {
-  const HeaderContainer({Key? key}) : super(key: key);
+  const HeaderContainer({super.key});
 
   @override
   Widget build(BuildContext context) {

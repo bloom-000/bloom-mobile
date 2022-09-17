@@ -8,7 +8,7 @@ import '../../../values/assets.dart';
 import '../state/welcome_page_cubit.dart';
 
 class ButtonCreateAccount extends StatelessWidget {
-  const ButtonCreateAccount({Key? key}) : super(key: key);
+  const ButtonCreateAccount({super.key});
 
   @override
   Widget build(BuildContext context) {

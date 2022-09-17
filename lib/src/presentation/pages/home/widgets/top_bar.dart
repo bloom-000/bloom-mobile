@@ -6,7 +6,7 @@ import '../../../values/assets.dart';
 import '../state/home_page_cubit.dart';
 
 class TopBar extends StatelessWidget implements PreferredSizeWidget {
-  const TopBar({Key? key}) : super(key: key);
+  const TopBar({super.key});
 
   @override
   Size get preferredSize => const Size(0, 56);

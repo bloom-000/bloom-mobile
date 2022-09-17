@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class DefaultBackButton extends StatelessWidget {
   const DefaultBackButton({
-    Key? key,
+    super.key,
     this.color,
-  }) : super(key: key);
+  });
 
   final Color? color;
 

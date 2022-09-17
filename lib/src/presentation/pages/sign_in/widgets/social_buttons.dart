@@ -6,7 +6,7 @@ import '../../../values/assets.dart';
 import '../state/sign_in_page_cubit.dart';
 
 class SocialButtons extends StatelessWidget {
-  const SocialButtons({Key? key}) : super(key: key);
+  const SocialButtons({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,10 +33,9 @@ class SocialButtons extends StatelessWidget {
 
 class _SocialButton extends StatelessWidget {
   const _SocialButton({
-    Key? key,
     required this.onPressed,
     required this.assetName,
-  }) : super(key: key);
+  });
 
   final VoidCallback onPressed;
   final String assetName;

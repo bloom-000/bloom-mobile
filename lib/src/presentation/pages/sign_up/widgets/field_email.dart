@@ -7,7 +7,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/sign_up_page_cubit.dart';
 
 class FieldEmail extends StatelessWidget {
-  const FieldEmail({Key? key}) : super(key: key);
+  const FieldEmail({super.key});
 
   @override
   Widget build(BuildContext context) {

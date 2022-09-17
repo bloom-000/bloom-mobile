@@ -7,7 +7,7 @@ import '../../../widgets/loading_text_button.dart';
 import '../state/product_page_cubit.dart';
 
 class FavoriteAddToCart extends StatelessWidget {
-  const FavoriteAddToCart({Key? key}) : super(key: key);
+  const FavoriteAddToCart({super.key});
 
   @override
   Widget build(BuildContext context) {

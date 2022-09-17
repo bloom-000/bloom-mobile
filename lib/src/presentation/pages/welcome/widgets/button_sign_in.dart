@@ -6,7 +6,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/welcome_page_cubit.dart';
 
 class ButtonSignIn extends StatelessWidget {
-  const ButtonSignIn({Key? key}) : super(key: key);
+  const ButtonSignIn({super.key});
 
   @override
   Widget build(BuildContext context) {

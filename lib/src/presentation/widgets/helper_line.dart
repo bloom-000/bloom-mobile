@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 
 class HelperLine extends StatelessWidget {
   const HelperLine({
-    Key? key,
+    super.key,
     required this.text,
-  }) : super(key: key);
+  });
 
   final String text;
 

@@ -10,9 +10,9 @@ import 'widgets/widgets.dart';
 
 class ProductPage extends StatelessWidget {
   const ProductPage({
-    Key? key,
+    super.key,
     required this.args,
-  }) : super(key: key);
+  });
 
   final ProductPageArgs args;
 
@@ -33,7 +33,7 @@ class ProductPage extends StatelessWidget {
 }
 
 class _Content extends StatelessWidget {
-  const _Content({Key? key}) : super(key: key);
+  const _Content();
 
   @override
   Widget build(BuildContext context) {

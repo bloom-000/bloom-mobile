@@ -7,7 +7,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/recover_password_confirm_page_cubit.dart';
 
 class ButtonResendCode extends StatelessWidget {
-  const ButtonResendCode({Key? key}) : super(key: key);
+  const ButtonResendCode({super.key});
 
   @override
   Widget build(BuildContext context) {

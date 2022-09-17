@@ -5,11 +5,11 @@ import '../../i18n/translation_keys.dart';
 
 class ConfirmationDialog extends StatelessWidget {
   const ConfirmationDialog({
-    Key? key,
+    super.key,
     required this.caption,
     this.positiveLabel,
     this.negativeLabel,
-  }) : super(key: key);
+  });
 
   final String caption;
   final String? positiveLabel;

@@ -117,12 +117,12 @@ class SignUpPageCubit extends Cubit<SignUpPageState> {
   Future<void> onSignUpPressed() async {
     emit(state.copyWith(validateForm: true));
 
-    if (!state.fullName.isValid ||
-        !state.email.isValid ||
+    if (state.fullName.invalid ||
+        state.email.invalid ||
         state.birthDate == null ||
         state.gender == null ||
-        !state.password.isValid ||
-        !state.repeatedPassword.isValid ||
+        state.password.invalid ||
+        state.repeatedPassword.invalid ||
         !state.agreedToLegalTerms) {
       return;
     }

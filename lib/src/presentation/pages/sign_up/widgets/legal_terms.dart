@@ -7,7 +7,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/sign_up_page_cubit.dart';
 
 class LegalTerms extends StatelessWidget {
-  const LegalTerms({Key? key}) : super(key: key);
+  const LegalTerms({super.key});
 
   @override
   Widget build(BuildContext context) {

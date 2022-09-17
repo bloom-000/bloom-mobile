@@ -43,7 +43,7 @@ class RecoverPasswordRequestPageCubit extends Cubit<RecoverPasswordRequestPageSt
   Future<void> onContinuePressed() async {
     emit(state.copyWith(validateForm: true));
 
-    if (!state.email.isValid) {
+    if (state.email.invalid) {
       return;
     }
 

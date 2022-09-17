@@ -10,7 +10,7 @@ import '../../../i18n/translation_keys.dart';
 import '../state/home_page_promoted_products_cubit.dart';
 
 class PromotedProducts extends StatelessWidget {
-  const PromotedProducts({Key? key}) : super(key: key);
+  const PromotedProducts({super.key});
 
   @override
   Widget build(BuildContext context) {

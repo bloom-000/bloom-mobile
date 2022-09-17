@@ -12,9 +12,9 @@ import 'widgets/widgets.dart';
 
 class RecoverPasswordChangePage extends StatelessWidget {
   const RecoverPasswordChangePage({
-    Key? key,
+    super.key,
     required this.args,
-  }) : super(key: key);
+  });
 
   final RecoverPasswordChangePageArgs args;
 
@@ -28,7 +28,7 @@ class RecoverPasswordChangePage extends StatelessWidget {
 }
 
 class _Content extends StatelessWidget {
-  const _Content({Key? key}) : super(key: key);
+  const _Content();
 
   @override
   Widget build(BuildContext context) {

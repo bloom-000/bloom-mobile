@@ -7,7 +7,7 @@ import '../../../widgets/loading_text_button.dart';
 import '../state/recover_password_confirm_page_cubit.dart';
 
 class ButtonContinue extends StatelessWidget {
-  const ButtonContinue({Key? key}) : super(key: key);
+  const ButtonContinue({super.key});
 
   @override
   Widget build(BuildContext context) {

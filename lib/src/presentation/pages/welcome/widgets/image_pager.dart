@@ -8,7 +8,7 @@ import '../../../values/assets.dart';
 import '../state/welcome_page_cubit.dart';
 
 class ImagePager extends StatelessWidget {
-  const ImagePager({Key? key}) : super(key: key);
+  const ImagePager({super.key});
 
   @override
   Widget build(BuildContext context) {

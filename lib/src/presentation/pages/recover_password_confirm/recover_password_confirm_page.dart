@@ -13,9 +13,9 @@ import 'widgets/widgets.dart';
 
 class RecoverPasswordConfirmPage extends StatelessWidget {
   const RecoverPasswordConfirmPage({
-    Key? key,
+    super.key,
     required this.args,
-  }) : super(key: key);
+  });
 
   final RecoverPasswordConfirmPageArgs args;
 
@@ -30,9 +30,8 @@ class RecoverPasswordConfirmPage extends StatelessWidget {
 
 class _Content extends StatelessWidget {
   const _Content({
-    Key? key,
     required this.args,
-  }) : super(key: key);
+  });
 
   final RecoverPasswordConfirmPageArgs args;
 

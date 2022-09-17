@@ -6,19 +6,19 @@ import '../../i18n/translation_keys.dart';
 
 class CaptionLastUpdated extends StatelessWidget {
   const CaptionLastUpdated({
-    Key? key,
+    super.key,
     required this.lastUpdatedAt,
-  }) : super(key: key);
+  });
 
   final DateTime lastUpdatedAt;
 
   @override
   Widget build(BuildContext context) {
-    final DateFormat _dateFormat = DateFormat('MMMM dd, yyyy', StaticI18N.locale?.languageCode);
+    final DateFormat dateFormat = DateFormat('MMMM dd, yyyy', StaticI18N.locale?.languageCode);
     final ThemeData theme = Theme.of(context);
 
     return Text(
-      '${TkCommon.lastUpdatedAt.i18n} ${_dateFormat.format(lastUpdatedAt)}',
+      '${TkCommon.lastUpdatedAt.i18n} ${dateFormat.format(lastUpdatedAt)}',
       style: TextStyle(color: theme.secondaryHeaderColor),
     );
   }

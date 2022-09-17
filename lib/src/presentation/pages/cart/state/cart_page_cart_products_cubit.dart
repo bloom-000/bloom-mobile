@@ -54,8 +54,8 @@ class CartPageCartProductsCubit extends DataPagerWithPageCubit<FetchFailure, Car
     result.fold(
       _upsertCartProductFailureNotifier.notify,
       (_) async {
-        final DataState<FetchFailure, DataPage<CartProduct>>? newState =
-            await state.modifyIfHasDataAndGet((DataPage<CartProduct> data) {
+        final DataState<FetchFailure, DataPage<CartProduct>> newState =
+            await state.modifyData((DataPage<CartProduct> data) {
           final List<CartProduct> items = List<CartProduct>.of(data.items);
 
           if (newQuantity == 0) {
@@ -72,9 +72,7 @@ class CartPageCartProductsCubit extends DataPagerWithPageCubit<FetchFailure, Car
           );
         });
 
-        if (newState != null) {
-          emit(newState);
-        }
+        emit(newState);
       },
     );
   }
