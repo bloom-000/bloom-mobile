@@ -22,12 +22,11 @@ class FieldEmail extends StatelessWidget {
         prefixIcon: SvgPicture.asset(Assets.iconEmail, fit: BoxFit.scaleDown),
       ),
       onChanged: context.read<RecoverPasswordRequestPageCubit>().onEmailChanged,
-      validator: (_) => context.read<RecoverPasswordRequestPageCubit>().state.email.value.fold(
+      validator: (_) => context.read<RecoverPasswordRequestPageCubit>().state.email.failureToString(
             (ValueFailure l) => l.when(
               empty: () => TkValidationError.fieldIsRequired.i18n,
               invalid: () => TkValidationError.invalidEmail.i18n,
             ),
-            (_) => null,
           ),
     );
   }

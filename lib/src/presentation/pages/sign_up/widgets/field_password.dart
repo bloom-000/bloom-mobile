@@ -37,13 +37,12 @@ class FieldPassword extends StatelessWidget {
             ),
           ),
           onChanged: context.read<SignUpPageCubit>().onPasswordChanged,
-          validator: (_) => context.read<SignUpPageCubit>().state.password.value.fold(
+          validator: (_) => context.read<SignUpPageCubit>().state.password.failureToString(
                 (PasswordFailure l) => l.maybeWhen(
                   empty: () => TkValidationError.fieldIsRequired.i18n,
                   tooShort: () => TkValidationError.passwordIsTooShort.i18n,
                   orElse: () => '',
                 ),
-                (_) => null,
               ),
         );
       },

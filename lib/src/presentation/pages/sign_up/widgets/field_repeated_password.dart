@@ -37,12 +37,11 @@ class FieldRepeatedPassword extends StatelessWidget {
             ),
           ),
           onChanged: context.read<SignUpPageCubit>().onRepeatedPasswordChanged,
-          validator: (_) => context.read<SignUpPageCubit>().state.repeatedPassword.value.fold(
+          validator: (_) => context.read<SignUpPageCubit>().state.repeatedPassword.failureToString(
                 (RepeatedPasswordFailure l) => l.when(
                   empty: () => TkValidationError.fieldIsRequired.i18n,
                   doesNotMatch: () => TkValidationError.repeatedPasswordDoesNotMatch.i18n,
                 ),
-                (_) => null,
               ),
         );
       },

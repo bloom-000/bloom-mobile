@@ -19,12 +19,11 @@ class FieldFullName extends StatelessWidget {
         hintText: TkFieldHint.fullName.i18n,
       ),
       onChanged: context.read<SignUpPageCubit>().onFullNameChanged,
-      validator: (_) => context.read<SignUpPageCubit>().state.fullName.value.fold(
+      validator: (_) => context.read<SignUpPageCubit>().state.fullName.failureToString(
             (NameFailure l) => l.when(
               empty: () => TkValidationError.fieldIsRequired.i18n,
               tooShort: () => TkValidationError.nameIsTooShort.i18n,
             ),
-            (_) => null,
           ),
     );
   }

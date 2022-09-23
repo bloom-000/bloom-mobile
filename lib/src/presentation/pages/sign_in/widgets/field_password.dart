@@ -32,22 +32,20 @@ class FieldPassword extends StatelessWidget {
             suffixIcon: GestureDetector(
               onTap: context.read<SignInPageCubit>().onPasswordEyePressed,
               child: SvgPicture.asset(
-                state.isPasswordFieldObscured ? Assets.iconEye : Assets.iconEyeOff,
-                width: 18,
-                height: 18,
-                fit: BoxFit.scaleDown,
-                color: theme.secondaryHeaderColor
-              ),
+                  state.isPasswordFieldObscured ? Assets.iconEye : Assets.iconEyeOff,
+                  width: 18,
+                  height: 18,
+                  fit: BoxFit.scaleDown,
+                  color: theme.secondaryHeaderColor),
             ),
           ),
           onChanged: context.read<SignInPageCubit>().onPasswordChanged,
-          validator: (_) => context.read<SignInPageCubit>().state.password.value.fold(
+          validator: (_) => context.read<SignInPageCubit>().state.password.failureToString(
                 (PasswordFailure l) => l.maybeWhen(
                   empty: () => TkValidationError.fieldIsRequired.i18n,
                   tooShort: () => TkValidationError.passwordIsTooShort.i18n,
                   orElse: () => '',
                 ),
-                (_) => null,
               ),
         );
       },
